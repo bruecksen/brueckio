@@ -1,0 +1,14 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="project-teaser">
+{% for project in projects %}
+    {% if forloop.counter0|divisibleby:3 %} <div class="row"> {%  endif %}
+    <div class="col-12 col-sm-4">
+        <div class="project">
+            {% image project.image max-450x271 class="img-fluid" %}
+            <h4><a href="{{ project.url }}">{{ project.title }}</a></h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At eum nemo accusamus, vel velit doloremque praesentium autem libero beatae explicabo et, voluptate, placeat repellat architecto dignissimos dolore distinctio necessitatibus pariatur.</p>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}</div>{%  endif %}
+{% endfor %}
+</div>

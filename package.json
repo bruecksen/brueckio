@@ -1,0 +1,30 @@
+{
+  "name": "brueckio",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cssnano": "*",
+    "gulp-imagemin": "*",
+    "gulp-pixrem": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "run-sequence": "*"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 2%"
+  ],
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "dev": "gulp"
+  }
+}

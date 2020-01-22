@@ -1,0 +1,7 @@
+{% load static i18n %}
+{% load wagtailimages_tags %}
+
+<figure class="figure">
+    {% image value.image width-1500 class="figure-img img-fluid d-block mx-auto" title=value.image.title %}
+    <figcaption class="figure-caption">{{ value.description }}</figcaption>
+</figure>
