@@ -11,18 +11,11 @@
           
             <div class="collapse navbar-collapse">
               <ul class="navbar-nav mx-auto">
-                <li class="nav-item active hover-underline-animation">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item hover-underline-animation">
-                  <a class="nav-link" href="#">Projects</a>
-                </li>
-                <li class="nav-item hover-underline-animation">
-                  <a class="nav-link" href="#">Service</a>
-                </li>
-                <li class="nav-item hover-underline-animation">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
+                  {% for menu_item in menu_items %}
+                  <li class="nav-item {% if page.url ==  menu_item.url %} active{% endif %} hover-underline-animation">
+                    <a class="nav-link" href="{{ menu_item.url }}">{{ menu_item.title}}</a>
+                  </li>
+                  {% endfor %}
               </ul>
               <ul class="navbar-nav platforms ml-auto">
                 <li class="nav-item">

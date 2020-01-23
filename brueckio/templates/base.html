@@ -1,4 +1,6 @@
-{% load static i18n %}<!DOCTYPE html>
+{% load static i18n %}
+{% load menu %}
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -33,13 +35,11 @@
   </head>
 
   <body>
-    {% block header %}
-      {% include "widgets/header.html" %}
-    {% endblock header %}
+    {% header %}
     {% block content %}
     {% endblock content %}
 
-    <!-- {% include "widgets/footer.html" %} -->
+    {% footer %}
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

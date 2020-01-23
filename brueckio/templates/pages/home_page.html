@@ -7,15 +7,9 @@
             {{ page.introduction|richtext }}
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row">
         {% include "widgets/project_teaser.html" with projects=projects %}
     </div>
-{% comment %}
-    <p>If you’d like to see some of my code, or other projects I’m involved in, take a look at my <a href="https://github.com/bruecksen" target="_blank">GitHub</a> profile.</p>
-    <div class="contact-teaser">
-        <p>Are you looking for support with your web project?<br>
-        <a href="#contact">Contact me</a>, I’d love to make it happen with you!</p>
-    </div>
-{% endcomment %}
 </div>
+{% include "widgets/contact_banner.html" %}
 {% endblock %}

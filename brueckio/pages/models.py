@@ -53,8 +53,10 @@ class ProjectPage(Page):
         on_delete=models.PROTECT,
         related_name='+'
     )
+    description = RichTextField()
     content = StreamField(BASE_BLOCKS, null=True, blank=True)
     content_panels = Page.content_panels + [
         ImageChooserPanel('image'),
+        FieldPanel('description'),
         StreamFieldPanel('content'),
     ]

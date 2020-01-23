@@ -12,6 +12,7 @@ $green:#00b597;
 $light-green: rgba(73, 180, 153, 0.2);
 $dark-gray: #373a3c;
 $black: #000;
+$white: #fff;
 
 .hover-underline-animation {
 	display: inline-block;
@@ -84,7 +85,7 @@ header {
         &.active,
         &:hover {
           .nav-link {
-            color: $green;
+            // color: $green;
           }
         }
         .nav-link {
@@ -103,23 +104,78 @@ header {
 }
 
 footer {
-  background-color: $yellow;
-  background-image: url('../images/footer-bend.png');
-  .navbar {
-    padding-left: 0;
-    padding-right: 0;
+  .contact-menu {
+    margin-top: 7rem;
   }
-  .nav-link {
-    color: $dark-gray;
-    font-size: 0.9rem;
-    &:hover {
-      color: $dark-gray;
-      text-decoration: underline;
-    }
-  }
+	p, li {
+		font-size: 1.3rem;
+		@media (max-width: 991.98px) {
+			font-size: 20px;
+			line-height: 1.5;
+		}
+		@media (max-width: 575.98px) {
+			font-size: 24px;
+			letter-spacing:normal;
+			line-height: 1.5;
+		}
+	}
+	.address a {
+		text-decoration: none;
+		color: $black;
+	}
+	.menu,
+	.copyright,
+	.email {
+		a {
+			display: inline-block;
+			position: relative;
+			text-decoration: none!important;
+      color: $black;
+      font-weight: 700;
+      line-height: 1.6;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 2px;
+        left: 0;
+        background-color: $green;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+		}
+	}
+	.copyright {
+		margin-top: 5rem;
+		margin-bottom: 1rem;
+		p {
+			font-size: 11px;
+		}
+		.copyright-text {
+			float: left;
+			margin-right: 0.5rem;
+		}
+		p a {
+			padding: 0;
+			margin: 0 0.25rem;
+		}
+	}
+	hr {
+		border-color: $black;
+		width: 50px;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
 }
 
 .project-teaser {
+  margin-bottom: 6rem;
   .row [class*='col-']:not(:first-child):not(:last-child) {
     padding-right: 30px;
     padding-left: 30px;
@@ -133,8 +189,12 @@ footer {
     padding-left: 45px;
   }
   .project {
+    border-bottom: 3px solid $light-green;
+    height: 100%;
     &:hover {
       cursor: pointer;
+      border-bottom: 3px solid $green;
+      // background-color: $light-green;
     }
     h4 {
       margin-top: 1rem;
@@ -142,6 +202,7 @@ footer {
       font-size: 20px;
       font-weight: bold;
       text-transform: uppercase;
+      // padding: 0 1rem;
       a {
         color: $black;
         &:hover {
@@ -149,10 +210,28 @@ footer {
         }
       }
     }
+    .rich-text {
+      // padding: 0 1rem;
+    }
     p {
       font-weight: 300;
       line-height: 1.6;
     }
+  }
+}
+
+.contact-banner {
+  background-color: $green;
+  color: $white;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 200;
+  b {
+    font-weight: 800;
+  }
+  a {
+    color: $white;
+    font-weight: 800;
   }
 }
 
