@@ -2,28 +2,16 @@ from __future__ import with_statement
 from fabric.api import *
 
 
-def staging():
-    projectname = 'brueckio'
-    basepath = '/srv/brueckio.brueck.io/%s'
-    env.hosts = ['{0}@{0}.brueck.io'.format(projectname)]
-    env.path = basepath % projectname
-    env.virtualenv_path = basepath % (projectname + 'env')
-    env.push_branch = 'staging'
-    env.push_remote = 'origin'
-    env.reload_cmd = 'supervisorctl restart {0}'.format(projectname)
-    env.after_deploy_url = 'http://%s.brueck.io' % projectname
-
-
 def production():
-    projectname = 'brueckio'
-    basepath = '/home/brueckio/%s'
-    env.hosts = ['brueckio@server.brueck.io']
+    projectname = 'brueck.io'
+    basepath = '/srv/brueck.io/%s'
+    env.hosts = ['brueck.io@beta.brueck.io']
     env.path = basepath % projectname
     env.virtualenv_path = basepath % (projectname + 'env')
     env.push_branch = 'master'
     env.push_remote = 'origin'
-    env.after_deploy_url = 'http://brueck.io'
     env.reload_cmd = 'supervisorctl restart {0}'.format(projectname)
+    env.after_deploy_url = 'http://%s.brueck.io' % projectname
 
 
 def reload_webserver():
