@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+<div class="row mb-5">
+    <div class="col-2">
+        {{ value.when }}
+    </div>
+    <div class="col-9">
+        {{ value.what|richtext }}
+    </div>
+</div>

@@ -45,6 +45,10 @@ $light-gray: #f7f7f7;
 	background-color: $green;
 }
 
+body,
+html {
+  height: 100%;
+}
 
 body {
   font-family: 'Martel', sans-serif;
@@ -53,19 +57,60 @@ body {
   font-size: 15px;
 }
 
+.container-fill {
+  // min-height: 100%;
+}
+
 h1,
 h2,
 h3,
 h4 {
   // font-family: 'Montserrat', sans-serif;
   font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  // color: $black;
 }
+
+h1 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    // transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: $green;
+  }
+}
+
 
 a {
   color: $green;
   &:hover {
     color: $green;
     text-decoration: underline;
+  }
+}
+
+p {
+  line-height: 1.8;
+  b {
+    font-weight: 800;
   }
 }
 
@@ -105,10 +150,11 @@ header {
 }
 
 footer {
-  .contact-menu {
-    margin-top: 7rem;
-  }
+  background-color: $light-gray;
+  padding-top: 3rem;
+  padding-bottom: 0;
 	p, li {
+    color: $black;
 		font-size: 1.3rem;
 		@media (max-width: 991.98px) {
 			font-size: 20px;
@@ -154,7 +200,6 @@ footer {
 	}
 	.copyright {
 		margin-top: 5rem;
-		margin-bottom: 1rem;
 		p {
 			font-size: 11px;
 		}
@@ -250,6 +295,10 @@ footer {
     font-weight: 400;
     line-height: 1.7;
   }
+}
+
+.content-page {
+  padding-bottom: 7rem;
 }
 
 

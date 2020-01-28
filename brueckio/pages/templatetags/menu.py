@@ -16,7 +16,7 @@ def footer(context, *args, **kwargs):
         return {
             'menu_items': pages,
             'request': context['request'],
-            'page': context['page'],
+            'page': 'page' in context and context['page'] or None,
         }
 
 
@@ -32,5 +32,5 @@ def header(context, *args, **kwargs):
         return {
             'menu_items': pages,
             'request': context['request'],
-            'page': context['page'],
+            'page': 'page' in context and context['page'] or None,
         }

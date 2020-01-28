@@ -20,7 +20,7 @@ class HomePage(Page):
 
     def get_context(self, value, parent_context=None):
         context = super(HomePage, self).get_context(value, parent_context=parent_context)
-        context['projects'] = ProjectPage.objects.live()
+        context['projects'] = ProjectPage.objects.live()[:6]
         return context
  
 
@@ -41,6 +41,12 @@ class ProjectOverviewPage(Page):
     content_panels = Page.content_panels + [
         StreamFieldPanel('content'),
     ]
+
+    def get_context(self, value, parent_context=None):
+        context = super(ProjectOverviewPage, self).get_context(value, parent_context=parent_context)
+        context['projects'] = ProjectPage.objects.live()
+        return context
+
 
 
 class ProjectPage(Page):
