@@ -371,16 +371,10 @@ footer {
 
 .project-teaser {
   margin-bottom: 96px;
-  margin-bottom: 6rem;
-  /* remove right padding from first column */
-  /* remove left padding from first column */ }
-  .project-teaser .row [class*='col-']:not(:first-child):not(:last-child) {
-    padding-right: 25px;
-    padding-left: 25px; }
-  .project-teaser .row [class*='col-']:first-child {
-    padding-right: 40px; }
-  .project-teaser .row [class*='col-']:last-child {
-    padding-left: 40px; }
+  margin-bottom: 6rem; }
+  .project-teaser .row {
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
   .project-teaser .project {
     border-bottom: 3px solid rgba(73, 180, 153, 0.2);
     height: 100%; }

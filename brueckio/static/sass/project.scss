@@ -225,17 +225,20 @@ footer {
 
 .project-teaser {
   margin-bottom: 6rem;
-  .row [class*='col-']:not(:first-child):not(:last-child) {
-    padding-right: 25px;
-    padding-left: 25px;
-  }
-  /* remove right padding from first column */
-  .row [class*='col-']:first-child {
-    padding-right: 40px;
-  }
-  /* remove left padding from first column */
-  .row [class*='col-']:last-child {
-    padding-left: 40px;
+  // .row [class*='col-']:not(:first-child):not(:last-child) {
+  //   padding-right: 25px;
+  //   padding-left: 25px;
+  // }
+  // /* remove right padding from first column */
+  // .row [class*='col-']:first-child {
+  //   padding-right: 40px;
+  // }
+  // /* remove left padding from first column */
+  // .row [class*='col-']:last-child {
+  //   padding-left: 40px;
+  // }
+  .row {
+    margin-bottom: 2rem;
   }
   .project {
     border-bottom: 3px solid $light-green;
