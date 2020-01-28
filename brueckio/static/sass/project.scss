@@ -226,16 +226,16 @@ footer {
 .project-teaser {
   margin-bottom: 6rem;
   .row [class*='col-']:not(:first-child):not(:last-child) {
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 25px;
+    padding-left: 25px;
   }
   /* remove right padding from first column */
   .row [class*='col-']:first-child {
-    padding-right: 45px;
+    padding-right: 40px;
   }
   /* remove left padding from first column */
   .row [class*='col-']:last-child {
-    padding-left: 45px;
+    padding-left: 40px;
   }
   .project {
     border-bottom: 3px solid $light-green;
@@ -246,7 +246,7 @@ footer {
       // background-color: $light-green;
     }
     h4 {
-      margin-top: 1rem;
+      margin-top: .6rem;
       margin-bottom: .2rem;
       font-size: 20px;
       font-weight: bold;

@@ -375,12 +375,12 @@ footer {
   /* remove right padding from first column */
   /* remove left padding from first column */ }
   .project-teaser .row [class*='col-']:not(:first-child):not(:last-child) {
-    padding-right: 30px;
-    padding-left: 30px; }
+    padding-right: 25px;
+    padding-left: 25px; }
   .project-teaser .row [class*='col-']:first-child {
-    padding-right: 45px; }
+    padding-right: 40px; }
   .project-teaser .row [class*='col-']:last-child {
-    padding-left: 45px; }
+    padding-left: 40px; }
   .project-teaser .project {
     border-bottom: 3px solid rgba(73, 180, 153, 0.2);
     height: 100%; }
@@ -388,8 +388,8 @@ footer {
       cursor: pointer;
       border-bottom: 3px solid #00b597; }
     .project-teaser .project h4 {
-      margin-top: 16px;
-      margin-top: 1rem;
+      margin-top: 9.6px;
+      margin-top: .6rem;
       margin-bottom: 3.2px;
       margin-bottom: .2rem;
       font-size: 20px;

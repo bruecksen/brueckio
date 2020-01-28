@@ -7,9 +7,7 @@
             {{ page.introduction|richtext }}
         </div>
     </div>
-    <div class="row">
-        {% include "widgets/project_teaser.html" with projects=projects %}
-    </div>
+    {% include "widgets/project_teaser.html" with projects=projects %}
 </div>
 {% include "widgets/contact_banner.html" %}
 {% endblock %}
