@@ -381,11 +381,11 @@ footer {
   margin-bottom: 96px;
   margin-bottom: 6rem;
   position: relative;
-  padding-bottom: 16px;
-  padding-bottom: 1rem; }
+  padding-bottom: 8px;
+  padding-bottom: .5rem; }
   .project-teaser .row {
-    margin-bottom: 32px;
-    margin-bottom: 2rem; }
+    margin-bottom: 48px;
+    margin-bottom: 3rem; }
   .project-teaser .project {
     border-bottom: 3px solid rgba(73, 180, 153, 0.2);
     height: 100%; }
@@ -426,8 +426,8 @@ footer {
 .introduction {
   margin-bottom: 112px;
   margin-bottom: 7rem;
-  padding-bottom: 16px;
-  padding-bottom: 1rem; }
+  padding-bottom: 32px;
+  padding-bottom: 2rem; }
   .introduction h1 {
     font-size: 28.8px;
     font-size: 1.8rem;
