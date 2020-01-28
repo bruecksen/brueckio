@@ -64,7 +64,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   // font-family: 'Montserrat', sans-serif;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -84,7 +85,9 @@ h2 {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h5 {
   position: relative;
   &:after {
     content: '';
@@ -250,7 +253,7 @@ footer {
       text-transform: uppercase;
       // padding: 0 1rem;
       a {
-        color: $black;
+        color: $dark-gray;
         &:hover {
           text-decoration: none;
         }
@@ -272,6 +275,7 @@ footer {
   font-size: 1.3rem;
   line-height: 2rem;
   font-weight: 200;
+  margin-bottom: 0;
   b {
     font-weight: 800;
   }
@@ -283,17 +287,27 @@ footer {
 
 // PAGES
 .introduction {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
   h1 {
+    &:after {
+      content: none;
+    }
     font-size: 1.8rem;
     font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 8rem;
   }
   h2 {
+    &:after {
+      content: none;
+    }
     font-family: 'Martel';
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.7;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: none;
   }
 }
 
