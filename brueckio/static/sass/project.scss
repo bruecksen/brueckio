@@ -117,6 +117,15 @@ p {
   }
 }
 
+.more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 14px;
+}
+
 
 // WIDGETS
 header {
@@ -225,6 +234,8 @@ footer {
 
 .project-teaser {
   margin-bottom: 6rem;
+  position:relative;
+  padding-bottom: 1rem;
   // .row [class*='col-']:not(:first-child):not(:last-child) {
   //   padding-right: 25px;
   //   padding-left: 25px;
@@ -291,6 +302,7 @@ footer {
 // PAGES
 .introduction {
   margin-bottom: 7rem;
+  padding-bottom: 1rem;
   h1 {
     &:after {
       content: none;

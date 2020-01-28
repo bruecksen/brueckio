@@ -274,6 +274,14 @@ p {
   p b {
     font-weight: 800; }
 
+.more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 14px; }
+
 header {
   border-top: 5px solid #00b597;
   background-color: rgba(73, 180, 153, 0.2); }
@@ -371,7 +379,10 @@ footer {
 
 .project-teaser {
   margin-bottom: 96px;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+  position: relative;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
   .project-teaser .row {
     margin-bottom: 32px;
     margin-bottom: 2rem; }
@@ -414,7 +425,9 @@ footer {
 
 .introduction {
   margin-bottom: 112px;
-  margin-bottom: 7rem; }
+  margin-bottom: 7rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
   .introduction h1 {
     font-size: 28.8px;
     font-size: 1.8rem;

@@ -5,9 +5,10 @@
     <div class="row">
         <div class="col-7 offset-1 introduction">
             {{ page.introduction|richtext }}
+            <a href="/about/" class="more">learn more <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
         </div>
     </div>
-    {% include "widgets/project_teaser.html" with projects=projects %}
+    {% include "widgets/project_teaser.html" with projects=projects show_more_link=True %}
 </div>
 {% include "widgets/contact_banner.html" %}
 {% endblock %}
