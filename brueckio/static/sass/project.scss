@@ -236,18 +236,19 @@ footer {
   margin-bottom: 6rem;
   position:relative;
   padding-bottom: .5rem;
-  // .row [class*='col-']:not(:first-child):not(:last-child) {
-  //   padding-right: 25px;
-  //   padding-left: 25px;
-  // }
-  // /* remove right padding from first column */
-  // .row [class*='col-']:first-child {
-  //   padding-right: 40px;
-  // }
-  // /* remove left padding from first column */
-  // .row [class*='col-']:last-child {
-  //   padding-left: 40px;
-  // }
+  // second column
+  .row [class*='col-']:not(:first-child):nth-child(n+1) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  // first column
+  .row [class*='col-']:first-child {
+    padding-right: 40px;
+  }
+  // last column
+  .row [class*='col-']:last-child:nth-child(n+3) {
+    padding-left: 40px;
+  }
   .row {
     margin-bottom: 3rem;
   }

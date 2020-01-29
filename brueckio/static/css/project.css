@@ -383,6 +383,13 @@ footer {
   position: relative;
   padding-bottom: 8px;
   padding-bottom: .5rem; }
+  .project-teaser .row [class*='col-']:not(:first-child):nth-child(n+1) {
+    padding-right: 25px;
+    padding-left: 25px; }
+  .project-teaser .row [class*='col-']:first-child {
+    padding-right: 40px; }
+  .project-teaser .row [class*='col-']:last-child:nth-child(n+3) {
+    padding-left: 40px; }
   .project-teaser .row {
     margin-bottom: 48px;
     margin-bottom: 3rem; }

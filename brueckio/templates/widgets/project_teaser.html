@@ -11,5 +11,5 @@
     </div>
     {% if forloop.counter|divisibleby:3 or forloop.last %}</div>{%  endif %}
 {% endfor %}
-<a href="/projects/" class="more">all projects <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+{% if show_more_link %}<a href="/projects/" class="more">all projects <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>{% endif %}
 </div>
