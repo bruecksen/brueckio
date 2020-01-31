@@ -126,6 +126,97 @@ p {
   font-size: 14px;
 }
 
+.btn {
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 600;
+  border-radius: 0;
+  &.btn-primary {
+    background-color: $green;
+    border: 0;
+  }
+  &.btn-white {
+    background-color: $white;
+    color: $dark-gray;
+    &:hover {
+      background-color: darken($white, 5);
+    }
+  }
+}
+
+form {
+  .form-group {
+    margin-bottom: .8rem;
+    position: relative;
+    label {
+      font-family: 'Montserrat', 'sans-serif';
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      // position: absolute;
+      // bottom: 0;
+      // margin-bottom: 0;
+      // transition: 
+      // 	background 0.3s,
+      // 	bottom 0.3s;
+      // position: absolute;
+      // color: $dark-gray;
+      // z-index: 999;
+      // font-size: 1rem;
+    }
+    input {
+      background: $white;
+      border-radius: unset;
+      border: none;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+      // z-index: 1;
+      // position: relative;
+      // top: 0;
+      // left: 0;
+      // padding: 0;
+      &:focus {
+        // box-shadow: none;
+        // background: transparent;
+      }
+      &:valid {
+        // // Hides the label
+        // background: $white; 
+      }
+      &:focus + label,
+      &.error + label {
+        // font-size: 80%;
+        // z-index: 2;
+        // bottom: -17px;
+        // color: $white;
+      }
+      &.error {
+        // color: $white;
+      }
+    }
+    textarea {
+      border: none;
+      border-radius: 0;
+      padding: .75rem .75rem
+      // padding: 0;
+    }
+  }
+  .btn {
+    margin-top: 1rem;
+  }
+  .error, 
+  .success {
+    display: none;
+    // margin-top: 1.5rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: 600;
+  }
+}
+
+
 
 // WIDGETS
 header {

@@ -282,6 +282,51 @@ p {
   font-family: 'Montserrat', 'sans-serif';
   font-size: 14px; }
 
+.btn {
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 600;
+  border-radius: 0; }
+  .btn.btn-primary {
+    background-color: #00b597;
+    border: 0; }
+  .btn.btn-white {
+    background-color: #fff;
+    color: #373a3c; }
+    .btn.btn-white:hover {
+      background-color: #f2f2f2; }
+
+form .form-group {
+  margin-bottom: 12.8px;
+  margin-bottom: .8rem;
+  position: relative; }
+  form .form-group label {
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 16px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0; }
+  form .form-group input {
+    background: #fff;
+    border-radius: unset;
+    border: none; }
+  form .form-group textarea {
+    border: none;
+    border-radius: 0;
+    padding: 12px 12px;
+    padding: 0.75rem 0.75rem; }
+
+form .btn {
+  margin-top: 16px;
+  margin-top: 1rem; }
+
+form .error,
+form .success {
+  display: none;
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 600; }
+
 header {
   border-top: 5px solid #00b597;
   background-color: rgba(73, 180, 153, 0.2); }

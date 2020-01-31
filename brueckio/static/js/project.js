@@ -20,7 +20,30 @@ Issues with the above approach:
 */
 
 $( document ).ready(function() {
+    // make whole project teaser clickable
     $('.project-teaser .project').click(function(event) {
         $(this).closest('.col').find('a')[0].click();
+    });
+
+    $('form.contact-form').submit( function(event) {
+        event.preventDefault();
+        var $form = $(this);
+        var button = $form.find('button').html('sending ...');
+        var formData = {};
+        $form.serializeArray().map(function(x){formData[x.name] = x.value;});
+        $.ajax({
+            url: '/api/contact-form/',
+            type: 'post',
+            dataType: 'json',
+            data: formData,
+            success: function(data) {
+                $form.find('.form-group, button').fadeOut(800, function(){
+                    $form.find('p.success').show();
+                });
+            },
+            error: function(data) {
+                $form.find('p.error').show().find('span.error-message').text(data.responseText);
+            }
+        });
     });
 });
