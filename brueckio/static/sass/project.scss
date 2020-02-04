@@ -9,7 +9,7 @@
 
 $yellow:#f5b516;
 $green:#00b597;
-$light-green: rgba(73, 180, 153, 0.2);
+$light-green: #e1f0eb;
 $dark-gray: #373a3c;
 $black: #000;
 $white: #fff;
@@ -124,6 +124,7 @@ p {
   text-transform: uppercase;
   font-family: 'Montserrat', 'sans-serif';
   font-size: 14px;
+  font-weight: 600;
 }
 
 .btn {
@@ -344,20 +345,20 @@ footer {
     margin-bottom: 3rem;
   }
   .project {
-    border-bottom: 3px solid $light-green;
+    // border-bottom: 3px solid $light-green;
     height: 100%;
     &:hover {
       cursor: pointer;
-      border-bottom: 3px solid $green;
+      // border-bottom: 3px solid $green;
       // background-color: $light-green;
     }
     h4 {
-      margin-top: .6rem;
-      margin-bottom: .2rem;
+      margin-top: 1.2rem;
+      margin-bottom: .4rem;
       font-size: 20px;
       font-weight: bold;
       text-transform: uppercase;
-      // padding: 0 1rem;
+      padding: 0 1rem;
       a {
         color: $dark-gray;
         &:hover {
@@ -366,7 +367,7 @@ footer {
       }
     }
     .rich-text {
-      // padding: 0 1rem;
+      padding: 0 1rem;
     }
     p {
       font-weight: 300;
