@@ -49,6 +49,7 @@ class ContactTeaserBlock(TextBlock):
     class Meta:
         icon = 'fa-file-text-o'
         label = 'Contact Teaser'
+        template = 'blocks/contact_teaser_block.html'
 
 
 class RichTextBlock(_RichTextBlock):
