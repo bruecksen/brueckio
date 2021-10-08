@@ -9,12 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page.description }}">
     <meta name="author" content="Matthias Brück">
-
-    <meta property="og:image" content="https://{{ request.site.hostname }}{% static 'images/banner.png' %}"/>
+    <meta property="og:image" content="https://{{ request.get_host }}{% static 'images/banner.png' %}"/>
     <meta property="og:locale" content="EN"/>
     <meta property="og:site_name" content="brueck.io"/>
     <meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}"/>
-    <meta property="og:url" content="https://{{ request.site.hostname }}"/>
+    <meta property="og:url" content="https://{{ request.get_host }}"/>
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/favicon/apple-touch-icon.png" %}">

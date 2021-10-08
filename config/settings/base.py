@@ -139,7 +139,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
@@ -165,6 +164,8 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = str(APPS_DIR('media'))
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # TEMPLATES
 # ------------------------------------------------------------------------------

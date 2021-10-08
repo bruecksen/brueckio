@@ -1,6 +1,8 @@
 from django import template
 from django.template.loader import render_to_string
 
+from wagtail.core.models import Site
+
 register = template.Library()
 
 
@@ -8,7 +10,7 @@ register = template.Library()
 def footer(context, *args, **kwargs):
     if 'request' in context:
         request = context['request']
-        root_page = context['request'].site.root_page
+        root_page = Site.find_for_request(request).root_page
         pages = root_page.get_children().filter(
             live=True,
             show_in_menus=True
@@ -24,7 +26,7 @@ def footer(context, *args, **kwargs):
 def header(context, *args, **kwargs):
     if 'request' in context:
         request = context['request']
-        root_page = context['request'].site.root_page
+        root_page = Site.find_for_request(request).root_page
         pages = root_page.get_children().filter(
             live=True,
             show_in_menus=True
