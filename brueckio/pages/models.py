@@ -33,6 +33,10 @@ class ContentPage(Page):
     ]
 
 
+class ContactPage(ContentPage):
+    pass
+
+
 class ProjectOverviewPage(Page):
     parent_page_types = ['HomePage']
     subpage_types = ['ProjectPage']

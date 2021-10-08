@@ -251,6 +251,11 @@ h5.underline {
     bottom: -5px;
     left: 0;
     background-color: #00b597; }
+  h1.underline.white:after,
+  h2.underline.white:after,
+  h3.underline.white:after,
+  h5.underline.white:after {
+    background-color: #fff; }
 
 .rich-text ul li {
   margin-bottom: 0.6rem; }

@@ -1,5 +1,12 @@
 <div class="jumbotron jumbotron-fluid contact-banner">
     <div class="container">
+        {% if heading %}
+        <div class="row">
+            <div class="col">
+                <h1 class="underline white">{{ heading }}</h1>
+            </div>
+        </div>
+        {% endif %}
         <div class="row">
             <div class="col-4">
                 <p><b>Are you looking for support with your web project?</b><br>

@@ -101,6 +101,9 @@ h5 {
       left: 0;
       background-color: $green;
     }
+    &.white:after{
+      background-color: $white;
+    }
   }
 }
 
