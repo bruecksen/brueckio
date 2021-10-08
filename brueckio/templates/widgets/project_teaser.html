@@ -6,7 +6,9 @@
         <div class="project shadow">
             {% image project.image max-450x271 class="img-fluid" %}
             <h4><a href="{{ project.url }}">{{ project.title }}</a></h4>
-            {{ project.description|richtext }}
+            <div class="rich-text">
+                {{ project.description|richtext }}
+            </div>
             <a href="{{ project.url }}" class="more">read more <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
         </div>
     </div>

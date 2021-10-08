@@ -1,6 +1,8 @@
 {% load wagtailcore_tags %}
 <div class="row">
     <div class="col-9 offset-1">
-        {{ value|richtext }}
+        <div class="rich-text">
+            {{ value|richtext }}
+        </div>
     </div>
 </div>

@@ -4,7 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-7 offset-1 introduction">
-            {{ page.introduction|richtext }}
+            <div class="rich-text">
+                {{ page.introduction|richtext }}
+            </div>
             <a href="/about/" class="more">learn more <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
         </div>
     </div>
