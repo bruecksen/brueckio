@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+<div class="row">
+    <div class="col">
+        <ul class="list-inline">
+            {% for fact in self.facts %}
+            <li class="list-inline-item">
+                <i class="{{ fact.icon }}"></i> {{ fact.fact }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -54,7 +54,7 @@ body {
   font-family: 'Martel', sans-serif;
   color: $dark-gray;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .container-fill {
@@ -88,19 +88,29 @@ h1,
 h2,
 h3,
 h5 {
-  position: relative;
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    // transform: scaleX(0);
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background-color: $green;
+  &.underline {
+    position: relative;
+    display: inline-block;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      // transform: scaleX(0);
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      background-color: $green;
+    }
   }
 }
 
+.rich-text {
+  ul {
+    li {
+      margin-bottom: 0.6rem
+    }
+  }
+}
 
 a {
   color: $green;
@@ -145,15 +155,28 @@ p {
   }
 }
 
+.btn-outline-primary {
+  color: $green;
+  border-color: $green;
+  border-radius: .25rem;
+  &:hover {
+    background-color: $green;
+    color: $white;
+    border-color: $green;
+  }
+}
+
 form {
   .form-group {
     margin-bottom: .8rem;
     position: relative;
     label {
       font-family: 'Montserrat', 'sans-serif';
-      font-size: 1rem;
+      font-size: .9rem;
       text-transform: uppercase;
       margin-bottom: 0;
+      display: block;
+      margin-top: -3px;
       // position: absolute;
       // bottom: 0;
       // margin-bottom: 0;
@@ -232,6 +255,7 @@ header {
       font-weight: 500;
       .nav-item {
         margin-left: 1rem;
+        font-size: 0.9rem;
         &.active,
         &:hover {
           .nav-link {
@@ -347,10 +371,14 @@ footer {
   .project {
     // border-bottom: 3px solid $light-green;
     height: 100%;
+    position: relative;
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     &:hover {
       cursor: pointer;
       // border-bottom: 3px solid $green;
       // background-color: $light-green;
+      transform: scale(1.05);
+      // box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
     }
     h4 {
       margin-top: 1.2rem;
@@ -368,10 +396,15 @@ footer {
     }
     .rich-text {
       padding: 0 1rem;
+      margin-bottom: 2rem;
     }
     p {
       font-weight: 300;
       line-height: 1.6;
+    }
+    .more {
+      bottom: 1rem;
+      right: 1rem;
     }
   }
 }
@@ -397,18 +430,12 @@ footer {
   margin-bottom: 7rem;
   padding-bottom: 2rem;
   h1 {
-    &:after {
-      content: none;
-    }
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 0;
     margin-top: 8rem;
   }
   h2 {
-    &:after {
-      content: none;
-    }
     font-family: 'Martel';
     font-size: 1.2rem;
     font-weight: 400;
@@ -426,9 +453,31 @@ footer {
 
 
 // BLOCKS
+
+.block-lead_text {
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 3rem;
+  p {
+    line-height: 1.6;
+  }
+}
 .block-rich_text,
 .block-image {
   margin-bottom: 4rem;
+}
+
+.block-image {
+  figure {
+    width: 100vw;
+    position: relative;
+    left: 50%;  
+    margin-left: -50vw;
+    figcaption {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
 }
 
 /* [1] The container */

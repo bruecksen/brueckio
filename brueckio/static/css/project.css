@@ -187,8 +187,7 @@
   content: '';
   position: absolute;
   width: 80%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   height: 2px;
   bottom: 5px;
   left: 0;
@@ -196,19 +195,13 @@
   margin-right: auto;
   right: 0;
   background-color: #00b597;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  transition: -webkit-transform 0.25s ease-out;
-  transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out; }
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out; }
 
 .hover-underline-animation:hover::after,
 .hover-underline-animation.active::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left; }
+  transform: scaleX(1);
+  transform-origin: bottom left; }
 
 .richtext-hover-underline a::after {
   background-color: #00b597; }
@@ -221,7 +214,7 @@ body {
   font-family: 'Martel', sans-serif;
   color: #373a3c;
   font-weight: 500;
-  font-size: 15px; }
+  font-size: 16px; }
 
 h1,
 h2,
@@ -233,35 +226,34 @@ h5 {
   font-weight: 600; }
 
 h1 {
-  margin-top: 96px;
   margin-top: 6rem;
-  margin-bottom: 32px;
   margin-bottom: 2rem;
-  font-size: 32px;
   font-size: 2rem; }
 
 h2 {
-  margin-top: 64px;
   margin-top: 4rem;
-  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
-h1,
-h2,
-h3,
-h5 {
-  position: relative; }
-  h1:after,
-  h2:after,
-  h3:after,
-  h5:after {
+h1.underline,
+h2.underline,
+h3.underline,
+h5.underline {
+  position: relative;
+  display: inline-block; }
+  h1.underline:after,
+  h2.underline:after,
+  h3.underline:after,
+  h5.underline:after {
     content: '';
     position: absolute;
-    width: 100px;
+    width: 100%;
     height: 3px;
     bottom: -5px;
     left: 0;
     background-color: #00b597; }
+
+.rich-text ul li {
+  margin-bottom: 0.6rem; }
 
 a {
   color: #00b597; }
@@ -297,16 +289,25 @@ p {
     .btn.btn-white:hover {
       background-color: #f2f2f2; }
 
+.btn-outline-primary {
+  color: #00b597;
+  border-color: #00b597;
+  border-radius: .25rem; }
+  .btn-outline-primary:hover {
+    background-color: #00b597;
+    color: #fff;
+    border-color: #00b597; }
+
 form .form-group {
-  margin-bottom: 12.8px;
   margin-bottom: .8rem;
   position: relative; }
   form .form-group label {
     font-family: 'Montserrat', 'sans-serif';
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: .9rem;
     text-transform: uppercase;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    display: block;
+    margin-top: -3px; }
   form .form-group input {
     background: #fff;
     border-radius: unset;
@@ -314,11 +315,9 @@ form .form-group {
   form .form-group textarea {
     border: none;
     border-radius: 0;
-    padding: 12px 12px;
     padding: 0.75rem 0.75rem; }
 
 form .btn {
-  margin-top: 16px;
   margin-top: 1rem; }
 
 form .error,
@@ -339,8 +338,8 @@ header {
       font-family: 'Montserrat', 'sans-serif';
       font-weight: 500; }
       header .navbar .navbar-nav .nav-item {
-        margin-left: 16px;
-        margin-left: 1rem; }
+        margin-left: 1rem;
+        font-size: 0.9rem; }
         header .navbar .navbar-nav .nav-item .nav-link {
           text-transform: uppercase;
           color: #000; }
@@ -349,12 +348,10 @@ header {
 
 footer {
   background-color: #f7f7f7;
-  padding-top: 48px;
   padding-top: 3rem;
   padding-bottom: 0; }
   footer p, footer li {
     color: #000;
-    font-size: 20.8px;
     font-size: 1.3rem; }
     @media (max-width: 991.98px) {
       footer p, footer li {
@@ -383,51 +380,37 @@ footer {
       content: '';
       position: absolute;
       width: 100%;
-      -webkit-transform: scaleX(0);
-              transform: scaleX(0);
+      transform: scaleX(0);
       height: 2px;
       bottom: 2px;
       left: 0;
       background-color: #00b597;
-      -webkit-transform-origin: bottom right;
-              transform-origin: bottom right;
-      -webkit-transition: -webkit-transform 0.25s ease-out;
-      transition: -webkit-transform 0.25s ease-out;
-      transition: transform 0.25s ease-out;
-      transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out; }
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out; }
     footer .menu a:hover:after,
     footer .copyright a:hover:after,
     footer .email a:hover:after {
-      -webkit-transform: scaleX(1);
-              transform: scaleX(1);
-      -webkit-transform-origin: bottom left;
-              transform-origin: bottom left; }
+      transform: scaleX(1);
+      transform-origin: bottom left; }
   footer .copyright {
-    margin-top: 80px;
     margin-top: 5rem; }
     footer .copyright p {
       font-size: 11px; }
     footer .copyright .copyright-text {
       float: left;
-      margin-right: 8px;
       margin-right: 0.5rem; }
     footer .copyright p a {
       padding: 0;
-      margin: 0 4px;
       margin: 0 0.25rem; }
   footer hr {
     border-color: #000;
     width: 50px;
-    margin-top: 32px;
     margin-top: 2rem;
-    margin-bottom: 16px;
     margin-bottom: 1rem; }
 
 .project-teaser {
-  margin-bottom: 96px;
   margin-bottom: 6rem;
   position: relative;
-  padding-bottom: 8px;
   padding-bottom: .5rem; }
   .project-teaser .row [class*='col-']:not(:first-child):nth-child(n+1) {
     padding-right: 25px;
@@ -437,39 +420,39 @@ footer {
   .project-teaser .row [class*='col-']:last-child:nth-child(n+3) {
     padding-left: 40px; }
   .project-teaser .row {
-    margin-bottom: 48px;
     margin-bottom: 3rem; }
   .project-teaser .project {
-    height: 100%; }
+    height: 100%;
+    position: relative;
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.3s box-shadow, 0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12); }
     .project-teaser .project:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      transform: scale(1.05); }
     .project-teaser .project h4 {
-      margin-top: 19.2px;
       margin-top: 1.2rem;
-      margin-bottom: 6.4px;
       margin-bottom: .4rem;
       font-size: 20px;
       font-weight: bold;
       text-transform: uppercase;
-      padding: 0 16px;
       padding: 0 1rem; }
       .project-teaser .project h4 a {
         color: #373a3c; }
         .project-teaser .project h4 a:hover {
           text-decoration: none; }
     .project-teaser .project .rich-text {
-      padding: 0 16px;
-      padding: 0 1rem; }
+      padding: 0 1rem;
+      margin-bottom: 2rem; }
     .project-teaser .project p {
       font-weight: 300;
       line-height: 1.6; }
+    .project-teaser .project .more {
+      bottom: 1rem;
+      right: 1rem; }
 
 .contact-banner {
   background-color: #00b597;
   color: #fff;
-  font-size: 20.8px;
   font-size: 1.3rem;
-  line-height: 32px;
   line-height: 2rem;
   font-weight: 200;
   margin-bottom: 0; }
@@ -480,39 +463,44 @@ footer {
     font-weight: 800; }
 
 .introduction {
-  margin-bottom: 112px;
   margin-bottom: 7rem;
-  padding-bottom: 32px;
   padding-bottom: 2rem; }
   .introduction h1 {
-    font-size: 28.8px;
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 0;
-    margin-top: 128px;
     margin-top: 8rem; }
-    .introduction h1:after {
-      content: none; }
   .introduction h2 {
     font-family: 'Martel';
-    font-size: 19.2px;
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.7;
     margin-bottom: 0;
     margin-top: 0;
     text-transform: none; }
-    .introduction h2:after {
-      content: none; }
 
 .content-page {
-  padding-bottom: 112px;
   padding-bottom: 7rem; }
+
+.block-lead_text {
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 3rem; }
+  .block-lead_text p {
+    line-height: 1.6; }
 
 .block-rich_text,
 .block-image {
-  margin-bottom: 64px;
   margin-bottom: 4rem; }
+
+.block-image figure {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw; }
+  .block-image figure figcaption {
+    text-align: center;
+    font-size: 15px; }
 
 /* [1] The container */
 .img-hover-zoom {
@@ -521,7 +509,6 @@ footer {
   margin: 0 auto;
   width: 450px;
   height: 271px;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   @media (max-width: 1199px) {
     .img-hover-zoom {
@@ -536,8 +523,7 @@ footer {
       width: 250px;
       height: 150px; } }
   .img-hover-zoom:hover {
-    -webkit-transform: rotate(1.5deg);
-            transform: rotate(1.5deg);
+    transform: rotate(1.5deg);
     opacity: .8;
     cursor: pointer; }
 
@@ -549,9 +535,7 @@ footer {
 
 .portfolio .row h3 {
   margin-top: 5px;
-  font-size: 17.6px;
   font-size: 1.1rem;
-  margin-bottom: 48px;
   margin-bottom: 3rem;
   text-transform: uppercase; }
   .portfolio .row h3 a {
@@ -560,11 +544,9 @@ footer {
 .contact-teaser {
   border: 10px solid #00b597;
   padding: 30px;
-  margin-bottom: 112px;
   margin-bottom: 7rem; }
   .contact-teaser p {
     text-align: center;
-    font-size: 32px;
     font-size: 2rem;
     line-height: 1.6; }
   .contact-teaser a {
@@ -572,15 +554,12 @@ footer {
 
 .contact form input,
 .contact form textarea {
-  font-size: 32px;
   font-size: 2rem;
   border: none;
   background-color: #eee;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  box-shadow: none; }
 
 .contact form input {
-  height: 56px;
   height: 3.5rem; }
 
 .contact form input[type=submit] {
@@ -600,7 +579,6 @@ footer {
 
 .page-template-fullwidthpagetitle p {
   text-align: left;
-  font-size: 22.4px;
   font-size: 1.4rem;
   line-height: 1.8; }
 
@@ -609,24 +587,20 @@ footer {
 .page-template-fullwidthpagetitle h3,
 .page-template-fullwidthpagetitle h4 {
   text-align: left;
-  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 .portfolio-page .entry-content h2 {
   text-align: center;
-  font-size: 32px;
   font-size: 2rem;
   line-height: 1.6; }
 
 .portfolio-page .entry-content p, .portfolio-page .entry-content li {
   text-align: left;
-  font-size: 22.4px;
   font-size: 1.4rem;
   line-height: 2; }
 
 .portfolio-page .entry-content img {
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1); }
 
 .portfolio-page .meta {
   margin-top: -35px;

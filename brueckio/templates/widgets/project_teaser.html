@@ -7,9 +7,14 @@
             {% image project.image max-450x271 class="img-fluid" %}
             <h4><a href="{{ project.url }}">{{ project.title }}</a></h4>
             {{ project.description|richtext }}
+            <a href="{{ project.url }}" class="more">read more <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
         </div>
     </div>
     {% if forloop.counter|divisibleby:3 or forloop.last %}</div>{%  endif %}
 {% endfor %}
-{% if show_more_link %}<a href="/projects/" class="more">all projects <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>{% endif %}
+{% if show_more_link %}
+    <div class="d-flex justify-content-center">
+        <a href="/projects/" class="btn btn-outline-primary">show all projects <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+    </div>
+{% endif %}
 </div>

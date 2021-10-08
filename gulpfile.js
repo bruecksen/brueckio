@@ -53,8 +53,6 @@ gulp.task('styles', function() {
       ]
     }).on('error', sass.logError))
     .pipe(plumber()) // Checks for errors
-    .pipe(autoprefixer()) // Adds vendor prefixes
-    .pipe(pixrem())  // add fallbacks for rem units
     .pipe(gulp.dest(paths.css))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano({ zindex: false })) // Minifies the result
