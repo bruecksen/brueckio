@@ -1,6 +1,7 @@
-from __future__ import with_statement
-from fabric.api import *
+from invoke import Exit
+from invocations.console import confirm
 
+from fabric import task
 
 def production():
     projectname = 'brueck.io'

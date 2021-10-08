@@ -455,7 +455,7 @@ footer {
       right: 1rem; }
 
 .contact-banner {
-  background-color: #00b597;
+  background: linear-gradient(110deg, #00b597 0%, #e1f0eb 100%);
   color: #fff;
   font-size: 1.3rem;
   line-height: 2rem;
