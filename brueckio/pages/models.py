@@ -21,7 +21,7 @@ class HomePage(Page):
 
     def get_context(self, value, parent_context=None):
         context = super(HomePage, self).get_context(value, parent_context=parent_context)
-        context['projects'] = ProjectPage.objects.live()[:3]
+        context['projects'] = ProjectPage.objects.live().filter(is_highlight=True)[:3]
         return context
  
 
@@ -64,9 +64,11 @@ class ProjectPage(Page):
         on_delete=models.PROTECT,
         related_name='+'
     )
+    is_highlight = models.BooleanField(default=False)
     description = RichTextField()
     content = StreamField(BASE_BLOCKS, null=True, blank=True)
     content_panels = Page.content_panels + [
+        FieldPanel('is_highlight'),
         ImageChooserPanel('image'),
         FieldPanel('description'),
         StreamFieldPanel('content'),
