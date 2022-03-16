@@ -615,10 +615,16 @@ footer hr {
 }
 
 .introduction {
-  margin-top: 8rem;
-  margin-bottom: 7rem;
+  margin-top: 7rem;
+  margin-bottom: 6rem;
   padding-bottom: 2rem;
   position: relative;
+}
+@media (min-width: 576px) {
+  .introduction {
+    margin-top: 8rem;
+    margin-bottom: 7rem;
+  }
 }
 .introduction h1 {
   margin-top: 0;

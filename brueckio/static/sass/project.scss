@@ -502,10 +502,14 @@ footer {
 
 // PAGES
 .introduction {
-  margin-top: 8rem;
-  margin-bottom: 7rem;
+  margin-top: 7rem;
+  margin-bottom: 6rem;
   padding-bottom: 2rem;
   position: relative;
+  @include media-breakpoint-up(sm) { 
+    margin-top: 8rem;
+    margin-bottom: 7rem;
+  }
   h1 {
     margin-top: 0;
     font-size: 1.6rem;
