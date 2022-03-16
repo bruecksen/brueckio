@@ -4,7 +4,7 @@
     {% if forloop.counter0|divisibleby:3 %} <div class="row gy-5 g-md-5"> {%  endif %}
     <div class="col col-12 col-md-4">
         <div class="project shadow">
-            {% image project.image fill-800x600 class="img-fluid" %}
+            {% image project.image fill-800x500 class="img-fluid" %}
             <h4><a href="{{ project.url }}">{{ project.title }}</a></h4>
             <div class="rich-text">
                 {{ project.description|richtext }}
