@@ -2,18 +2,18 @@
     <div class="container py-5">
         {% if heading %}
         <div class="row">
-            <div class="col">
+            <div class="col offset-md-1">
                 <h1><span class="underline white">{{ heading }}</span></h1>
             </div>
         </div>
         {% endif %}
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 offset-md-1">
                 <p><b>Are you looking for support with your web project?</b><br>
                 Contact me, I'd love to make it happen with you!</p>
                 <p>Say <a href="mailto:hi@brueck.io">hi@brueck.io</a> or <br>call <a href="tel:+4917699093233">+49 176 9909 3233</a></p>
             </div>
-            <div class="col-12 col-md-6 offset-md-2">
+            <div class="col-12 col-md-4 offset-md-1">
                 {% include "widgets/contact_form.html" %}
             </div>
         </div>
