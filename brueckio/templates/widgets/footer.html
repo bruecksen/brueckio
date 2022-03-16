@@ -2,12 +2,12 @@
 <footer>
     <div class="container">
         <div class="row contact-menu">
-            <div class="col-8">
+            <div class="col-8 col-sm-8">
                 <p class="address">Matthias Brück<br>Am Pumpwerk 4<br>12524 Berlin</p>
                 <p class="email"><a href="mailto:hi@brueck.io">hi@brueck.io</a><br>
                 <a href="tel:+4917699093233">+49 176 9909 3233</a></p>
             </div>
-            <div class="col-3 offset-1 menu">
+            <div class="col-4 col-sm-3 offset-sm-1 menu">
                 <ul class="list-unstyled">
                     {% for menu_item in menu_items %}
                     <li class="{% if page.url ==  menu_item.url %} active{% endif %}"><a href="{{ menu_item.url }}" class="">{{ menu_item.title }}</a></li>

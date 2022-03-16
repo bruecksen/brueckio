@@ -1,109 +1,140 @@
+////////////////////////////////
+// Setup
+////////////////////////////////
 
-////////////////////////////////
-		//Setup//
-////////////////////////////////
+// Gulp and package
+const { src, dest, parallel, series, watch } = require('gulp')
+const pjson = require('./package.json')
 
 // Plugins
-var gulp = require('gulp'),
-      pjson = require('./package.json'),
-      gutil = require('gulp-util'),
-      sass = require('gulp-sass'),
-      autoprefixer = require('gulp-autoprefixer'),
-      cssnano = require('gulp-cssnano'),
-      rename = require('gulp-rename'),
-      del = require('del'),
-      plumber = require('gulp-plumber'),
-      pixrem = require('gulp-pixrem'),
-      uglify = require('gulp-uglify'),
-      imagemin = require('gulp-imagemin'),
-      spawn = require('child_process').spawn,
-      runSequence = require('run-sequence'),
-      browserSync = require('browser-sync').create(),
-      reload = browserSync.reload;
+const autoprefixer = require('autoprefixer')
+const browserSync = require('browser-sync').create()
 
+const cssnano = require ('cssnano')
+const imagemin = require('gulp-imagemin')
+const pixrem = require('pixrem')
+const plumber = require('gulp-plumber')
+const postcss = require('gulp-postcss')
+const reload = browserSync.reload
+const rename = require('gulp-rename')
+const sass = require('gulp-sass')(require('sass'))
+const spawn = require('child_process').spawn
+const uglify = require('gulp-uglify-es').default
 
 // Relative paths function
-var pathsConfig = function (appName) {
-  this.app = "./" + (appName || pjson.name);
-  var vendorsRoot = 'node_modules/';
+function pathsConfig(appName) {
+  this.app = `./${pjson.name}`
+  const vendorsRoot = 'node_modules'
 
   return {
     app: this.app,
-    templates: this.app + '/templates',
-    css: this.app + '/static/css',
-    sass: this.app + '/static/sass',
-    fonts: this.app + '/static/fonts',
-    images: this.app + '/static/images',
-    js: this.app + '/static/js'
+    templates: `${this.app}/templates`,
+    css: `${this.app}/static/css`,
+    sass: `${this.app}/static/sass`,
+    fonts: `${this.app}/static/fonts`,
+    images: `${this.app}/static/images`,
+    js: `${this.app}/static/js`,
   }
-};
+}
 
-var paths = pathsConfig();
+var paths = pathsConfig()
 
 ////////////////////////////////
-		//Tasks//
+// Tasks
 ////////////////////////////////
 
 // Styles autoprefixing and minification
-gulp.task('styles', function() {
-  return gulp.src(paths.sass + '/project.scss')
+function styles() {
+  var processCss = [
+      autoprefixer(), // adds vendor prefixes
+      // pixrem(),       // add fallbacks for rem units
+  ]
+
+  var minifyCss = [
+      cssnano({ preset: 'default' })   // minify result
+  ]
+
+  return src(`${paths.sass}/project.scss`)
     .pipe(sass({
       includePaths: [
         paths.sass
       ]
     }).on('error', sass.logError))
     .pipe(plumber()) // Checks for errors
-    .pipe(gulp.dest(paths.css))
+    .pipe(postcss(processCss))
+    .pipe(dest(paths.css))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(cssnano({ zindex: false })) // Minifies the result
-    .pipe(gulp.dest(paths.css));
-});
+    .pipe(postcss(minifyCss)) // Minifies the result
+    .pipe(dest(paths.css))
+}
 
 // Javascript minification
-gulp.task('scripts', function() {
-  return gulp.src(paths.js + '/project.js')
+function scripts() {
+  return src(`${paths.js}/project.js`)
     .pipe(plumber()) // Checks for errors
     .pipe(uglify()) // Minifies the js
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.js));
-});
-
+    .pipe(dest(paths.js))
+}
 
 // Image compression
-gulp.task('imgCompression', function(){
-  return gulp.src(paths.images + '/*')
+function imgCompression() {
+  return src(`${paths.images}/*`)
     .pipe(imagemin()) // Compresses PNG, JPEG, GIF and SVG images
-    .pipe(gulp.dest(paths.images))
-});
-
+    .pipe(dest(paths.images))
+}
 // Run django server
-gulp.task('runServer', function(cb) {
-  var cmd = spawn('python', ['manage.py', 'runserver'], {stdio: 'inherit'});
+function runServer(cb) {
+  var cmd = spawn('python', ['manage.py', 'runserver'], {stdio: 'inherit'})
   cmd.on('close', function(code) {
-    console.log('runServer exited with code ' + code);
-    cb(code);
-  });
-});
+    console.log('runServer exited with code ' + code)
+    cb(code)
+  })
+}
 
 // Browser sync server for live reload
-gulp.task('browserSync', function() {
-    browserSync.init(
-      [paths.css + "/*.css", paths.js + "*.js", paths.templates + '*.html'], {
-        proxy:  "localhost:8000"
-    });
-});
+function initBrowserSync() {
+  browserSync.init(
+    [
+      `${paths.css}/*.css`,
+      `${paths.js}/*.js`,
+      `${paths.templates}/*.html`
+    ], {
+      // https://www.browsersync.io/docs/options/#option-proxy
+      proxy:  {
+        target: '127.0.0.1:8000',
+        proxyReq: [
+          function(proxyReq, req) {
+            // Assign proxy "host" header same as current request at Browsersync server
+            proxyReq.setHeader('Host', req.headers.host)
+          }
+        ]
+      }
+    }
+  )
+}
 
 // Watch
-gulp.task('watch', function() {
+function watchPaths() {
+  watch(`${paths.sass}/*.scss`, styles)
+  watch(`${paths.templates}/**/*.html`).on("change", reload)
+  watch([`${paths.js}/*.js`, `!${paths.js}/*.min.js`], scripts).on("change", reload)
+}
 
-  gulp.watch(paths.sass + '/*.scss', gulp.series('styles'));
-  gulp.watch(paths.js + '/project.js', gulp.series('scripts'));
-  gulp.watch(paths.images + '/*', gulp.series('imgCompression'));
-  gulp.watch(paths.templates + '/**/*.html').on("change", reload);
+// Generate all assets
+const generateAssets = parallel(
+  styles,
+  scripts,
+  imgCompression
+)
 
-});
+// Set up dev environment
+const dev = parallel(
+  // runServer,
+  // initBrowserSync,
+  watchPaths
+)
 
-// Default task
-gulp.task('default', function() {
-    runSequence(['styles', 'scripts', 'imgCompression'], ['runServer', 'browserSync', 'watch']);
-});
+exports.default = series(generateAssets, dev)
+exports["generate-assets"] = generateAssets
+exports["dev"] = dev

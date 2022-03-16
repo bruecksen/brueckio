@@ -3,11 +3,16 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-7 offset-1 introduction">
+        <div class="col-12 col-md-7 offset-md-1 introduction">
             <div class="rich-text">
                 {{ page.introduction|richtext }}
             </div>
             <a href="/about/" class="more">learn more <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <h4><span class="underline">Selected Projects</span></h4>
         </div>
     </div>
     {% include "widgets/project_teaser.html" with projects=projects show_more_link=True %}

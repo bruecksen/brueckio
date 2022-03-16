@@ -1,34 +1,35 @@
 {% load static %}
 <header>
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="/">
-                <img src="{% static 'images/logo.png' %}" alt="logo" height="25">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse">
-              <ul class="navbar-nav mx-auto">
-                  {% for menu_item in menu_items %}
-                  <li class="nav-item {% if page.url ==  menu_item.url %} active{% endif %} hover-underline-animation">
-                    <a class="nav-link" href="{{ menu_item.url }}">{{ menu_item.title}}</a>
-                  </li>
-                  {% endfor %}
-              </ul>
-              <ul class="navbar-nav platforms ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="https://github.com/bruecksen"><i class="fab fa-lg fa-github-square"></i></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fab fa-lg fa-linkedin"></i></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://www.xing.com/profile/Matthias_Brueck10/"><i class="fab fa-lg fa-xing-square"></i></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-    </div>
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'images/logo.svg' %}" alt="logo" height="25">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span>
+          <span class="fa fa-times"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav mx-auto">
+              {% for menu_item in menu_items %}
+              <li class="nav-item">
+                <a class="nav-link hover-underline-animation{% if page.url ==  menu_item.url %} active{% endif %}" href="{{ menu_item.url }}">{{ menu_item.title}}</a>
+              </li>
+              {% endfor %}
+          </ul>
+          <ul class="navbar-nav platforms ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/bruecksen"><i class="fab fa-lg fa-github-square"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fab fa-lg fa-linkedin"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.xing.com/profile/Matthias_Brueck10/"><i class="fab fa-lg fa-xing-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 </header>

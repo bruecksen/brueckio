@@ -24,6 +24,13 @@ $( document ).ready(function() {
     $('.project-teaser .project').click(function(event) {
         $(this).closest('.col').find('a')[0].click();
     });
+    // toggle navbar class 
+    $('#main-menu').on('show.bs.collapse', function () {
+        $('header').addClass('open');
+    })
+    $('#main-menu').on('hide.bs.collapse', function () {
+            $('header').removeClass('open');
+    })
 
     $('form.contact-form').submit( function(event) {
         event.preventDefault();
