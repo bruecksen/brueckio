@@ -1,4 +1,5 @@
 @import "fonts";
+@import "logo";
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
@@ -72,8 +73,8 @@ h2,
 h3,
 h4,
 h5 {
-  // font-family: 'Montserrat', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   // color: $black;
@@ -140,14 +141,14 @@ p {
   right: 1rem;
   bottom: 1rem;
   text-transform: uppercase;
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: 'Noto Sans', 'sans-serif';
   font-size: 14px;
   font-weight: 600;
 }
 
 .btn {
   text-transform: uppercase;
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: 'Noto Sans', 'sans-serif';
   font-weight: 600;
   border-radius: 0;
   &.btn-primary {
@@ -179,7 +180,7 @@ form {
     margin-bottom: .8rem;
     position: relative;
     label {
-      font-family: 'Montserrat', 'sans-serif';
+      font-family: 'Noto Sans', 'sans-serif';
       font-size: .9rem;
       text-transform: uppercase;
       margin-bottom: 0;
@@ -243,7 +244,7 @@ form {
     display: none;
     // margin-top: 1.5rem;
     text-transform: uppercase;
-    font-family: 'Montserrat', 'sans-serif';
+    font-family: 'Noto Sans', 'sans-serif';
     font-weight: 600;
   }
 }
@@ -330,7 +331,7 @@ header {
     }
     .navbar-nav {
       background: transparent;
-      font-family:  'Montserrat', 'sans-serif';
+      font-family:  'Noto Sans', 'sans-serif';
       font-weight: 500;
       .nav-item {
         margin-left: 1rem;
@@ -352,6 +353,12 @@ header {
       &.platforms {
         .nav-item {
           margin-left: 0;
+        }
+        .nav-link .fab {
+          &:hover {
+            color: $green;
+          }
+
         }
       }
 
@@ -567,6 +574,11 @@ footer {
       font-size: 15px;
     }
   }
+  img.rounded-circle {
+    @include media-breakpoint-only(xs) { 
+      border-radius: initial!important;
+    }
+  }
 }
 
 /* [1] The container */
@@ -696,7 +708,7 @@ footer {
     color: #373a3c; }
   .portfolio-page .meta span {
     margin-right: 5px;
-    // font-family: 'Montserrat';
+    // font-family: 'Noto Sans';
 }
 
 
@@ -712,3 +724,71 @@ footer {
     line-height: 2; } }
 
 
+.testimonials {
+  border-top: 1px solid $light-green;
+  border-bottom: 1px solid $light-green;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rem;
+  
+  &.no-border {
+    border-top: none;
+    border-bottom: none;
+  }
+  .carousel {
+    width: 100%;
+    .carousel-inner {
+      height: 100%;
+      width: 100%;
+      .carousel-item {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        .testimonial {
+          width: 60%;
+          margin: 0 auto;
+          position: relative;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+          &:before,
+          &:after {
+            font-family: "Font Awesome 5 Free";
+            width: 65px;
+            height: 65px;
+            font-size: 5rem;
+            position: absolute;
+            color: $green;
+            line-height: 1;
+            z-index: -1;
+            opacity: 0.3;
+          }
+          &:before {
+            content: '\f10d';
+            left: -1rem;
+            top: .5rem;
+          }
+          &:after {
+            content: '\f10e';
+            bottom: 1.5rem;
+            right: 1.5rem;
+          }
+        }
+      }
+  }
+  }
+  .blockquote {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  @media (max-width: 576px) {
+    .carousel .carousel-inner .carousel-item .testimonial {
+      width: 90%;
+    }
+  }
+}

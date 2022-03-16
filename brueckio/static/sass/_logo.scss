@@ -1,0 +1,44 @@
+  @keyframes buzz-out-on-hover {
+    10% {
+      transform: rotate(8deg);
+    }
+    20% {
+      transform:  rotate(-8deg);
+    }
+    30% {
+      transform: rotate(4deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+    60% {
+      transform: rotate(-2deg);
+    }
+    70% {
+      transform:  rotate(1deg);
+    }
+    80% {
+      transform:  rotate(-1deg);
+    }
+    90% {
+      transform:  rotate(0);
+    }
+    100% {
+      transform:  rotate(0);
+    }
+  }
+  #logo-svg {
+    &:hover {
+      #letter-e {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation-name: buzz-out-on-hover;
+        animation-duration: .9s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+    }
+  }

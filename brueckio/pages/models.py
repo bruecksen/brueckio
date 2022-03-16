@@ -2,7 +2,8 @@ from django.db import models
 
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, PageChooserPanel
+from wagtail.snippets.models import register_snippet
 
 from wagtail.images.edit_handlers import ImageChooserPanel
 
@@ -20,7 +21,7 @@ class HomePage(Page):
 
     def get_context(self, value, parent_context=None):
         context = super(HomePage, self).get_context(value, parent_context=parent_context)
-        context['projects'] = ProjectPage.objects.live()[:6]
+        context['projects'] = ProjectPage.objects.live()[:3]
         return context
  
 
@@ -70,3 +71,27 @@ class ProjectPage(Page):
         FieldPanel('description'),
         StreamFieldPanel('content'),
     ]
+
+
+@register_snippet
+class Testimonial(models.Model):
+    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    project = models.ForeignKey(
+        'pages.ProjectPage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='testimonials'
+    )
+    text = models.TextField()
+
+    panels = [
+        FieldPanel('name'),
+        FieldPanel('title'),
+        PageChooserPanel('project'),
+        FieldPanel('text'),
+    ]
+
+    def __str__(self):
+        return self.name

@@ -1,0 +1,36 @@
+{% load wagtailcore_tags %}
+{% load testimonials %}
+{% all_testimonials as testimonials %}
+<div class="testimonials{% if no_border %} no-border{% endif %}">
+    <div id="testimonials-{{ uuid }}" class="carousel" data-interval="false">
+        <div class="carousel-inner">
+            {% for testimonial in testimonials %}
+            <div class="carousel-item {% if forloop.first %} active{% endif %}">
+                <div class="testimonial">
+                    <blockquote class="blockquote">
+                        {{ testimonial.text|richtext }}
+                    </blockquote>
+                    <p>{% if testimonial.project %}
+                        <a href="{{ testimonial.project.url }}">
+                        {% endif %}
+                        <strong>{{ testimonial.name }}</strong>{% if testimonial.title %} ({{ testimonial.title }}){% endif %}
+                        {% if testimonial.project %}
+                        </a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if testimonials|length > 1 %}
+        <a class="carousel-control-prev" href="#testimonials-{{ uuid }}" role="button" data-slide="prev">
+            <i class="fas fa-chevron-left fa-2x"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#testimonials-{{ uuid }}" role="button" data-slide="next">
+            <i class="fas fa-chevron-right fa-2x"></i>
+            <span class="sr-only">Next</span>
+        </a>
+        {% endif %}
+    </div>
+</div>
