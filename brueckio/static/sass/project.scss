@@ -106,7 +106,7 @@ h5 {
     // background-size: 0% 2px;
     // transition: background-size .3s;
     background-size: 100% 3px;
-    &.white:after{
+    &.white {
       background-image: linear-gradient($white, $white);
     }
   }

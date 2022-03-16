@@ -271,11 +271,11 @@ h5 .underline {
   background-repeat: no-repeat;
   background-size: 100% 3px;
 }
-h1 .underline.white:after,
-h2 .underline.white:after,
-h3 .underline.white:after,
-h4 .underline.white:after,
-h5 .underline.white:after {
+h1 .underline.white,
+h2 .underline.white,
+h3 .underline.white,
+h4 .underline.white,
+h5 .underline.white {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
   background-image: linear-gradient(#fff, #fff);
 }
