@@ -428,6 +428,14 @@ header .navbar {
   padding-left: 0;
   padding-right: 0;
 }
+header .navbar .navbar-toggler {
+  color: #212529;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+}
 header .navbar .navbar-toggler:focus {
   outline: none;
   -webkit-box-shadow: none;

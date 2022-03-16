@@ -1,7 +1,4 @@
-from invoke import Exit
-from invocations.console import confirm
-
-from fabric import task
+from fabric.api import *
 
 def production():
     projectname = 'brueck.io'

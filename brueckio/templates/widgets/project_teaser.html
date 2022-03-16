@@ -1,7 +1,7 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 <div class="project-teaser">
 {% for project in projects %}
-    {% if forloop.counter0|divisibleby:3 %} <div class="row g-5"> {%  endif %}
+    {% if forloop.counter0|divisibleby:3 %} <div class="row gy-5 g-sm-5"> {%  endif %}
     <div class="col col-12 col-sm-4">
         <div class="project shadow">
             {% image project.image max-450x271 class="img-fluid" %}

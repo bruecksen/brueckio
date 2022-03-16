@@ -305,9 +305,12 @@ header {
     padding-left: 0;
     padding-right: 0;
     .navbar-toggler {
-      // position: absolute;
-      // top: 0;
-      // right: 0;
+      color: $dark;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: .8rem;
+      font-size: 1.5rem;
       // border: none;
       &:focus {
         outline: none;
