@@ -4,7 +4,14 @@
         <ul class="list-inline">
             {% for fact in self.facts %}
             <li class="list-inline-item">
-                <i class="{{ fact.icon }}"></i> {{ fact.fact }}
+                <i class="{{ fact.icon }}"></i> 
+                {% if fact.link %}
+                <a href="{{ fact.link }}" target="_blank">
+                {% endif %}
+                {{ fact.fact }}
+                {% if fact.link %}
+                </a>
+                {% endif %}
             </li>
             {% endfor %}
         </ul>
