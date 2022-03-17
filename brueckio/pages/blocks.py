@@ -80,7 +80,7 @@ class ImageBlock(StructBlock):
         icon = 'fa-image'
 
 ICON_CHOICES = [
-    ('fab fa-xing-square', 'Xing'),
+    ('fab fa-github-square', 'Github'),
     ('fa fa-external-link-square-alt', 'Website'),
     ('fa fa-microchip', 'Technologies'),
 ]
