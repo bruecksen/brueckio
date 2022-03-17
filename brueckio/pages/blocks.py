@@ -92,6 +92,7 @@ class KeyFactsBlock(StructBlock):
             [
                 ("icon", ChoiceBlock(required=True, choices=ICON_CHOICES)),
                 ("fact", CharBlock(required=True)),
+                ("link", URLBlock(required=False)),
             ], icon='fa-check'
         )
     )
