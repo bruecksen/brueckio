@@ -1,10 +1,15 @@
 {% load wagtailcore_tags %}
+{% load static %}
 <div class="row">
     <div class="col">
         <ul class="list-inline">
             {% for fact in self.facts %}
             <li class="list-inline-item">
+                {% if fact.icon == 'django' or fact.icon == 'wagtail' or fact.icon == 'bootstrap' %}
+                <img src="{% static 'images/' %}{{ fact.icon }}.png" class="icon">
+                {% else %}
                 <i class="{{ fact.icon }}"></i> 
+                {% endif %}
                 {% if fact.link %}
                 <a href="{{ fact.link }}" target="_blank">
                 {% endif %}
