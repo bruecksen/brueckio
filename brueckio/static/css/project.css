@@ -354,6 +354,7 @@ p b {
   background-color: #00b597;
   color: #fff;
   border-color: #00b597;
+  text-decoration: none;
 }
 
 form .form-group {

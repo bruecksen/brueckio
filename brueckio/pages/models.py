@@ -95,5 +95,11 @@ class Testimonial(models.Model):
         FieldPanel('text'),
     ]
 
+    class Meta:
+        # abstract = True
+        ordering = ['-title', 'name']
+
     def __str__(self):
         return self.name
+
+
