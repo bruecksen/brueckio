@@ -86,7 +86,7 @@ class ImageBlock(StructBlock):
 ICON_CHOICES = [
     ('fab fa-github-square', 'Github'),
     ('fa fa-link', 'Website'),
-    ('fa-solid fa-clock', 'Time'),
+    ('fas fa-clock', 'Time'),
     ('fa fa-microchip', 'Technologies'),
     ('django', 'Django'),
     ('wagtail', 'Wagtail'),
