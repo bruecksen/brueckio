@@ -550,7 +550,8 @@ footer {
 
 // BLOCKS
 
-.block-lead_text {
+.block-lead_text,
+.project-heading {
   font-weight: 800;
   font-size: 20px;
   margin-bottom: 1rem;
@@ -561,6 +562,8 @@ footer {
     margin-bottom: 3rem;
   }
 }
+
+
 .block-rich_text,
 .block-image,
 .block-key_facts {
@@ -743,6 +746,11 @@ footer {
     border-top: none;
     border-bottom: none;
   }
+  .carousel-control-next,
+  .carousel-control-prev {
+    color: $green;
+    text-decoration: none;
+  }
   .carousel {
     width: 100%;
     .carousel-inner {
@@ -765,10 +773,10 @@ footer {
             height: 65px;
             font-size: 5rem;
             position: absolute;
-            color: $green;
+            color: $dark;
             line-height: 1;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.1;
           }
           &:before {
             content: '\f10d';

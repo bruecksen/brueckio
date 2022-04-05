@@ -677,16 +677,19 @@ footer hr {
   padding-bottom: 7rem;
 }
 
-.block-lead_text {
+.block-lead_text,
+.project-heading {
   font-weight: 800;
   font-size: 20px;
   margin-bottom: 1rem;
 }
-.block-lead_text p {
+.block-lead_text p,
+.project-heading p {
   line-height: 1.6;
 }
 @media (min-width: 576px) {
-  .block-lead_text {
+  .block-lead_text,
+.project-heading {
     margin-bottom: 3rem;
   }
 }
@@ -903,6 +906,11 @@ footer hr {
   border-top: none;
   border-bottom: none;
 }
+.testimonials .carousel-control-next,
+.testimonials .carousel-control-prev {
+  color: #00b597;
+  text-decoration: none;
+}
 .testimonials .carousel {
   width: 100%;
 }
@@ -928,10 +936,10 @@ footer hr {
   height: 65px;
   font-size: 5rem;
   position: absolute;
-  color: #00b597;
+  color: #212529;
   line-height: 1;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 .testimonials .carousel .carousel-inner .carousel-item .testimonial:before {
   content: "\f10d";
