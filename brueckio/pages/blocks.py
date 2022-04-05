@@ -87,6 +87,7 @@ ICON_CHOICES = [
     ('fab fa-github-square', 'Github'),
     ('fa fa-link', 'Website'),
     ('fas fa-clock', 'Time'),
+    ('fas fa-list-check', 'Jobs'),
     ('fa fa-microchip', 'Technologies'),
     ('django', 'Django'),
     ('wagtail', 'Wagtail'),
