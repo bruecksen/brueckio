@@ -6,10 +6,10 @@
             {{ value.lead_text|richtext }}
         </div>
     </div>
-    <div class="col-12 col-lg-3">
+    <div class="col-12 offset-lg-1 col-lg-3">
         <ul class="list-unstyled">
             {% for fact in value.facts.facts %}
-            <li class="">
+            <li class="mb-1">
                 {% if fact.icon == 'django' or fact.icon == 'wagtail' or fact.icon == 'bootstrap' %}
                 <img src="{% static 'images/' %}{{ fact.icon }}.png" class="icon">
                 {% else %}
