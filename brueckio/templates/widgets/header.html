@@ -14,7 +14,7 @@
           <ul class="navbar-nav mx-auto">
               {% for menu_item in menu_items %}
               <li class="nav-item">
-                <a class="nav-link hover-underline-animation{% if page.url ==  menu_item.url %} active{% endif %}" href="{{ menu_item.url }}">{{ menu_item.title}}</a>
+                <a class="nav-link hover-underline-animation{% if page.url ==  menu_item.url or page.get_parent.url == menu_item.url %} active{% endif %}" href="{{ menu_item.url }}">{{ menu_item.title}}</a>
               </li>
               {% endfor %}
           </ul>
