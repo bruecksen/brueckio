@@ -7,4 +7,4 @@ register = template.Library()
 
 @register.simple_tag
 def all_testimonials():
-    return Testimonial.objects.all()
+    return Testimonial.objects.filter(is_highlight=True)

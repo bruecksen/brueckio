@@ -87,6 +87,7 @@ class Testimonial(models.Model):
         related_name='testimonials'
     )
     text = models.TextField()
+    is_highlight = models.BooleanField(default=False)
 
     panels = [
         FieldPanel('name'),
