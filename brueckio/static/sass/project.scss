@@ -52,6 +52,11 @@ $light-gray: #f7f7f7;
 	background-color: $green;
 }
 
+
+.border-green {
+  border: 6px solid $green;
+}
+
 body,
 html {
   height: 100%;
@@ -562,7 +567,18 @@ footer {
     margin-bottom: 3rem;
   }
 }
-
+.block-contact_teaser {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  p {
+    // width: 60%;
+    // margin-left: auto;
+    // margin-right: auto;
+    // text-align: center;
+    // font-size: 1.5rem;
+    // font-weight: bold;
+  }
+}
 
 .block-rich_text,
 .block-image,

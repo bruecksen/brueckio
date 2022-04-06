@@ -1,1 +1,4 @@
-{% include "widgets/contact_banner.html" %}
+{% load wagtailcore_tags %}
+<div class="w-60 mx-auto text-center fs-3 fw-bold border-green pt-5 pb-4">
+    {{ value|richtext }}
+</div>

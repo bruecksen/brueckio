@@ -239,6 +239,10 @@
   background-color: #00b597;
 }
 
+.border-green {
+  border: 6px solid #00b597;
+}
+
 body,
 html {
   height: 100%;
@@ -694,6 +698,10 @@ footer hr {
   }
 }
 
+.block-contact_teaser {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
 .block-rich_text,
 .block-image,
 .block-key_facts {

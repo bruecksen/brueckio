@@ -48,7 +48,7 @@ class CvBlock(StructBlock):
         icon = 'fa-clock'
 
 
-class ContactTeaserBlock(TextBlock):
+class ContactTeaserBlock(_RichTextBlock):
 
     class Meta:
         icon = 'fa-file-text-o'
