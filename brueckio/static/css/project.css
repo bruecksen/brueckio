@@ -730,6 +730,15 @@ footer hr {
           transform: translateY(-50%) translateX(-120%);
   width: 30%;
 }
+.block-image .testimonial p {
+  text-align: center;
+}
+.block-image .testimonial .blockquote {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-style: normal;
+}
 
 /* [1] The container */
 .img-hover-zoom {
@@ -931,12 +940,6 @@ footer hr {
   position: relative;
   width: 100%;
 }
-.testimonials .blockquote {
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.5;
-  margin-bottom: 0;
-}
 .testimonials p {
   margin-bottom: 0;
 }
@@ -973,4 +976,10 @@ footer hr {
   content: "\f10e";
   bottom: 1.5rem;
   right: 1.5rem;
+}
+.testimonial .blockquote {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 0;
 }

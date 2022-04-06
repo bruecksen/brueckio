@@ -595,6 +595,16 @@ footer {
     left: 50%;
     transform: translateY(-50%) translateX(-120%);
     width: 30%;
+    p {
+      text-align: center;
+    }
+    .blockquote {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-style: normal;
+
+    }
   }
 }
 
@@ -770,12 +780,6 @@ footer {
       }
   }
   }
-  .blockquote {
-    font-size: 16px;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 0;
-  }
   p {
     margin-bottom: 0;
   }
@@ -812,5 +816,11 @@ footer {
     content: '\f10e';
     bottom: 1.5rem;
     right: 1.5rem;
+  }
+  .blockquote {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0;
   }
 }
