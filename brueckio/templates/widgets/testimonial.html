@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+<div class="testimonial">
+    <blockquote class="blockquote">
+        {{ testimonial.text|richtext }}
+    </blockquote>
+    <p>{% if testimonial.project %}
+        <a href="{{ testimonial.project.url }}">
+        {% endif %}
+        <strong>{{ testimonial.name }}</strong>{% if testimonial.title %} ({{ testimonial.title }}){% endif %}
+        {% if testimonial.project %}
+        </a>
+        {% endif %}
+    </p>
+</div>

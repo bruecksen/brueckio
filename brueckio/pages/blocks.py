@@ -64,6 +64,9 @@ class RichTextBlock(_RichTextBlock):
         template = 'blocks/rich_text_block.html'
 
 
+class TestimonialBlock(SnippetChooserBlock):
+    pass
+
 class LeadTextBlock(_RichTextBlock):
 
     class Meta:
@@ -74,8 +77,13 @@ class LeadTextBlock(_RichTextBlock):
 
 class ImageBlock(StructBlock):
     image = ImageChooserBlock()
-    description = CharBlock()
+    description = CharBlock(required=False)
     is_circle = BooleanBlock(label="Show as a circle?", required=False)
+    is_full_width = BooleanBlock(required=False)
+    content = StreamBlock([
+        ('testimonial', TestimonialBlock(target_model='pages.Testimonial', template='blocks/testimonial_block.html')),
+        ('rich_text', RichTextBlock()),
+    ], required=False)
 
 
     class Meta:
@@ -139,16 +147,6 @@ class ColumnOneThirdBlock(StructBlock):
         icon = 'table'
         label = 'One Third (3,1)'
         template = 'blocks/columns-3-1_block.html'
-
-
-class TestimonialBlock(SnippetChooserBlock):
-    def get_context(self, value, parent_context=None):
-        context = super().get_context(value, parent_context)
-        context.update({
-            'uuid': uuid.uuid4(),
-            'testimonials': [value]
-        })
-        return context
 
 
 BASE_BLOCKS = [

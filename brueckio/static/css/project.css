@@ -708,7 +708,7 @@ footer hr {
 }
 
 .block-image figure {
-  width: 100vw;
+  width: calc(100vw - 8px);
   position: relative;
   left: 50%;
   margin-left: -50vw;
@@ -721,6 +721,14 @@ footer hr {
   .block-image img.rounded-circle {
     border-radius: initial !important;
   }
+}
+.block-image .testimonial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-120%);
+          transform: translateY(-50%) translateX(-120%);
+  width: 30%;
 }
 
 /* [1] The container */
@@ -923,34 +931,6 @@ footer hr {
   position: relative;
   width: 100%;
 }
-.testimonials .carousel .carousel-inner .carousel-item .testimonial {
-  width: 60%;
-  margin: 0 auto;
-  position: relative;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-.testimonials .carousel .carousel-inner .carousel-item .testimonial:before, .testimonials .carousel .carousel-inner .carousel-item .testimonial:after {
-  font-family: "Font Awesome 5 Free";
-  width: 65px;
-  height: 65px;
-  font-size: 5rem;
-  position: absolute;
-  color: #212529;
-  line-height: 1;
-  z-index: -1;
-  opacity: 0.1;
-}
-.testimonials .carousel .carousel-inner .carousel-item .testimonial:before {
-  content: "\f10d";
-  left: -1rem;
-  top: 0.5rem;
-}
-.testimonials .carousel .carousel-inner .carousel-item .testimonial:after {
-  content: "\f10e";
-  bottom: 1.5rem;
-  right: 1.5rem;
-}
 .testimonials .blockquote {
   font-size: 16px;
   font-style: italic;
@@ -964,4 +944,33 @@ footer hr {
   .testimonials .carousel .carousel-inner .carousel-item .testimonial {
     width: 90%;
   }
+}
+
+.testimonial {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.testimonial:before, .testimonial:after {
+  font-family: "Font Awesome 5 Free";
+  width: 65px;
+  height: 65px;
+  font-size: 5rem;
+  position: absolute;
+  color: #212529;
+  line-height: 1;
+  z-index: -1;
+  opacity: 0.1;
+}
+.testimonial:before {
+  content: "\f10d";
+  left: -1rem;
+  top: 0.5rem;
+}
+.testimonial:after {
+  content: "\f10e";
+  bottom: 1.5rem;
+  right: 1.5rem;
 }

@@ -575,7 +575,7 @@ footer {
 
 .block-image {
   figure {
-    width: 100vw;
+    width: calc(100vw - 8px);
     position: relative;
     left: 50%;  
     margin-left: -50vw;
@@ -588,6 +588,13 @@ footer {
     @include media-breakpoint-only(xs) { 
       border-radius: initial!important;
     }
+  }
+  .testimonial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-120%);
+    width: 30%;
   }
 }
 
@@ -760,35 +767,6 @@ footer {
         height: 100%;
         position: relative;
         width: 100%;
-        .testimonial {
-          width: 60%;
-          margin: 0 auto;
-          position: relative;
-          padding-top: 2rem;
-          padding-bottom: 2rem;
-          &:before,
-          &:after {
-            font-family: "Font Awesome 5 Free";
-            width: 65px;
-            height: 65px;
-            font-size: 5rem;
-            position: absolute;
-            color: $dark;
-            line-height: 1;
-            z-index: -1;
-            opacity: 0.1;
-          }
-          &:before {
-            content: '\f10d';
-            left: -1rem;
-            top: .5rem;
-          }
-          &:after {
-            content: '\f10e';
-            bottom: 1.5rem;
-            right: 1.5rem;
-          }
-        }
       }
   }
   }
@@ -805,5 +783,34 @@ footer {
     .carousel .carousel-inner .carousel-item .testimonial {
       width: 90%;
     }
+  }
+}
+.testimonial {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  &:before,
+  &:after {
+    font-family: "Font Awesome 5 Free";
+    width: 65px;
+    height: 65px;
+    font-size: 5rem;
+    position: absolute;
+    color: $dark;
+    line-height: 1;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  &:before {
+    content: '\f10d';
+    left: -1rem;
+    top: .5rem;
+  }
+  &:after {
+    content: '\f10e';
+    bottom: 1.5rem;
+    right: 1.5rem;
   }
 }
