@@ -91,6 +91,7 @@ class Testimonial(models.Model):
 
     panels = [
         FieldPanel('name'),
+        FieldPanel('is_highlight'),
         FieldPanel('title'),
         PageChooserPanel('project'),
         FieldPanel('text'),
