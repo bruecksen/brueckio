@@ -239,6 +239,10 @@
   background-color: #00b597;
 }
 
+.background-gradient {
+  background: linear-gradient(110deg, #00b597 0%, #e1f0eb 100%);
+}
+
 .border-green {
   border: 6px solid #00b597;
 }
@@ -683,7 +687,6 @@ footer hr {
 
 .block-lead_text,
 .project-heading {
-  font-weight: 800;
   font-size: 20px;
   margin-bottom: 1rem;
 }

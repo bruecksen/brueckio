@@ -52,6 +52,10 @@ $light-gray: #f7f7f7;
 	background-color: $green;
 }
 
+.background-gradient {
+  background: linear-gradient(110deg, $green 0%, $light-green 100%);
+}
+
 
 .border-green {
   border: 6px solid $green;
@@ -557,7 +561,6 @@ footer {
 
 .block-lead_text,
 .project-heading {
-  font-weight: 800;
   font-size: 20px;
   margin-bottom: 1rem;
   p {
