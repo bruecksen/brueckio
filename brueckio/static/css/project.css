@@ -750,6 +750,9 @@ footer hr {
   font-weight: bold;
   font-style: normal;
 }
+.block-image .testimonial a {
+  color: #373a3c;
+}
 
 /* [1] The container */
 .img-hover-zoom {
