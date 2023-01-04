@@ -6,6 +6,6 @@ django==3.2.*
 django-environ==0.8.1  # https://github.com/joke2k/django-environ
 argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
 # Wagtail
-wagtail==2.16.*
+wagtail==4.1.*
 wagtailfontawesome==1.2.1
 djangorestframework==3.13.*

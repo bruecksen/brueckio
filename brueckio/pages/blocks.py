@@ -1,11 +1,11 @@
 
 import uuid
-from wagtail.core.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
+from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
                                  DateBlock, IntegerBlock, ListBlock,
                                  PageChooserBlock)
-from wagtail.core.blocks import RawHTMLBlock as _RawHTMLBlock
-from wagtail.core.blocks import RichTextBlock as _RichTextBlock
-from wagtail.core.blocks import (StreamBlock, StructBlock, StructValue,
+from wagtail.blocks import RawHTMLBlock as _RawHTMLBlock
+from wagtail.blocks import RichTextBlock as _RichTextBlock
+from wagtail.blocks import (StreamBlock, StructBlock, StructValue,
                                  TextBlock, TimeBlock, URLBlock)
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock

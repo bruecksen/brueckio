@@ -3,8 +3,8 @@
 import brueckio.pages.blocks
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             name='ContentPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('content', wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', wagtail.core.blocks.RichTextBlock()), ('highlight_text', wagtail.core.blocks.TextBlock()), ('contact_teaser', wagtail.core.blocks.TextBlock())], blank=True, null=True)),
+                ('content', wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', wagtail.blocks.RichTextBlock()), ('highlight_text', wagtail.blocks.TextBlock()), ('contact_teaser', wagtail.blocks.TextBlock())], blank=True, null=True)),
             ],
             options={
                 'abstract': False,
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
             name='HomePage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('content', wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', wagtail.core.blocks.RichTextBlock()), ('highlight_text', wagtail.core.blocks.TextBlock()), ('contact_teaser', wagtail.core.blocks.TextBlock())], blank=True, null=True)),
+                ('content', wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', wagtail.blocks.RichTextBlock()), ('highlight_text', wagtail.blocks.TextBlock()), ('contact_teaser', wagtail.blocks.TextBlock())], blank=True, null=True)),
             ],
             options={
                 'abstract': False,
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
             name='ProjectPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('content', wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', wagtail.core.blocks.RichTextBlock()), ('highlight_text', wagtail.core.blocks.TextBlock()), ('contact_teaser', wagtail.core.blocks.TextBlock())], blank=True, null=True)),
+                ('content', wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', wagtail.blocks.RichTextBlock()), ('highlight_text', wagtail.blocks.TextBlock()), ('contact_teaser', wagtail.blocks.TextBlock())], blank=True, null=True)),
             ],
             options={
                 'abstract': False,

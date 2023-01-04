@@ -2,8 +2,8 @@
 
 import brueckio.pages.blocks
 from django.db import migrations
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.images.blocks
 
 
@@ -17,16 +17,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='contentpage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', wagtail.core.blocks.StructBlock([('heading', wagtail.core.blocks.ChoiceBlock(choices=[('h1', 'H1'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4'), ('h5', 'H5'), ('h6', 'H6')], label='Header Size')), ('text', wagtail.core.blocks.CharBlock(label='Text', max_length=50))])), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('lead_text', brueckio.pages.blocks.LeadTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', wagtail.core.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('description', wagtail.core.blocks.CharBlock())])), ('cv', wagtail.core.blocks.StructBlock([('when', wagtail.core.blocks.CharBlock()), ('what', wagtail.core.blocks.RichTextBlock())]))], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', wagtail.blocks.StructBlock([('heading', wagtail.blocks.ChoiceBlock(choices=[('h1', 'H1'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4'), ('h5', 'H5'), ('h6', 'H6')], label='Header Size')), ('text', wagtail.blocks.CharBlock(label='Text', max_length=50))])), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('lead_text', brueckio.pages.blocks.LeadTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', wagtail.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('description', wagtail.blocks.CharBlock())])), ('cv', wagtail.blocks.StructBlock([('when', wagtail.blocks.CharBlock()), ('what', wagtail.blocks.RichTextBlock())]))], blank=True, null=True),
         ),
         migrations.AlterField(
             model_name='projectoverviewpage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', wagtail.core.blocks.StructBlock([('heading', wagtail.core.blocks.ChoiceBlock(choices=[('h1', 'H1'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4'), ('h5', 'H5'), ('h6', 'H6')], label='Header Size')), ('text', wagtail.core.blocks.CharBlock(label='Text', max_length=50))])), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('lead_text', brueckio.pages.blocks.LeadTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', wagtail.core.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('description', wagtail.core.blocks.CharBlock())])), ('cv', wagtail.core.blocks.StructBlock([('when', wagtail.core.blocks.CharBlock()), ('what', wagtail.core.blocks.RichTextBlock())]))], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', wagtail.blocks.StructBlock([('heading', wagtail.blocks.ChoiceBlock(choices=[('h1', 'H1'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4'), ('h5', 'H5'), ('h6', 'H6')], label='Header Size')), ('text', wagtail.blocks.CharBlock(label='Text', max_length=50))])), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('lead_text', brueckio.pages.blocks.LeadTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', wagtail.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('description', wagtail.blocks.CharBlock())])), ('cv', wagtail.blocks.StructBlock([('when', wagtail.blocks.CharBlock()), ('what', wagtail.blocks.RichTextBlock())]))], blank=True, null=True),
         ),
         migrations.AlterField(
             model_name='projectpage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', wagtail.core.blocks.StructBlock([('heading', wagtail.core.blocks.ChoiceBlock(choices=[('h1', 'H1'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4'), ('h5', 'H5'), ('h6', 'H6')], label='Header Size')), ('text', wagtail.core.blocks.CharBlock(label='Text', max_length=50))])), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('lead_text', brueckio.pages.blocks.LeadTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', wagtail.core.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('description', wagtail.core.blocks.CharBlock())])), ('cv', wagtail.core.blocks.StructBlock([('when', wagtail.core.blocks.CharBlock()), ('what', wagtail.core.blocks.RichTextBlock())]))], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', wagtail.blocks.StructBlock([('heading', wagtail.blocks.ChoiceBlock(choices=[('h1', 'H1'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4'), ('h5', 'H5'), ('h6', 'H6')], label='Header Size')), ('text', wagtail.blocks.CharBlock(label='Text', max_length=50))])), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('lead_text', brueckio.pages.blocks.LeadTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', wagtail.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('description', wagtail.blocks.CharBlock())])), ('cv', wagtail.blocks.StructBlock([('when', wagtail.blocks.CharBlock()), ('what', wagtail.blocks.RichTextBlock())]))], blank=True, null=True),
         ),
     ]

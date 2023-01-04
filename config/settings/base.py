@@ -72,7 +72,7 @@ THIRD_PARTY_APPS = [
     'wagtail.admin',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.routable_page',
-    'wagtail.core',
+    'wagtail',
 
     'modelcluster',
     'taggit',
@@ -229,3 +229,4 @@ MANAGERS = ADMINS
 
 # Wagtail settings
 WAGTAIL_SITE_NAME = "brueck.io"
+WAGTAILADMIN_BASE_URL = env('WAGTAILADMIN_BASE_URL', default="https://brueck.io")

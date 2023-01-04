@@ -1,11 +1,9 @@
 from django.db import models
 
-from wagtail.core.models import Page
-from wagtail.core.fields import StreamField, RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, PageChooserPanel
+from wagtail.models import Page
+from wagtail.fields import StreamField, RichTextField
+from wagtail.admin.panels import FieldPanel
 from wagtail.snippets.models import register_snippet
-
-from wagtail.images.edit_handlers import ImageChooserPanel
 
 from .blocks import BASE_BLOCKS
 
@@ -28,9 +26,9 @@ class HomePage(Page):
 class ContentPage(Page):
     parent_page_types = ['HomePage']
 
-    content = StreamField(BASE_BLOCKS, null=True, blank=True)
+    content = StreamField(BASE_BLOCKS, null=True, blank=True, use_json_field=True)
     content_panels = Page.content_panels + [
-        StreamFieldPanel('content'),
+        FieldPanel('content'),
     ]
 
 
@@ -42,9 +40,9 @@ class ProjectOverviewPage(Page):
     parent_page_types = ['HomePage']
     subpage_types = ['ProjectPage']
 
-    content = StreamField(BASE_BLOCKS, null=True, blank=True)
+    content = StreamField(BASE_BLOCKS, null=True, blank=True, use_json_field=True)
     content_panels = Page.content_panels + [
-        StreamFieldPanel('content'),
+        FieldPanel('content'),
     ]
 
     def get_context(self, value, parent_context=None):
@@ -66,12 +64,12 @@ class ProjectPage(Page):
     )
     is_highlight = models.BooleanField(default=False)
     description = RichTextField()
-    content = StreamField(BASE_BLOCKS, null=True, blank=True)
+    content = StreamField(BASE_BLOCKS, null=True, blank=True, use_json_field=True)
     content_panels = Page.content_panels + [
         FieldPanel('is_highlight'),
-        ImageChooserPanel('image'),
+        FieldPanel('image'),
         FieldPanel('description'),
-        StreamFieldPanel('content'),
+        FieldPanel('content'),
     ]
 
 
@@ -93,7 +91,7 @@ class Testimonial(models.Model):
         FieldPanel('name'),
         FieldPanel('is_highlight'),
         FieldPanel('title'),
-        PageChooserPanel('project'),
+        FieldPanel('project'),
         FieldPanel('text'),
     ]
 

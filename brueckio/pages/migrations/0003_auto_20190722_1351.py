@@ -2,7 +2,7 @@
 
 import brueckio.pages.blocks
 from django.db import migrations
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -15,21 +15,21 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='contentpage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
         ),
         migrations.AlterField(
             model_name='homepage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
         ),
         migrations.AlterField(
             model_name='projectoverviewpage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
         ),
         migrations.AlterField(
             model_name='projectpage',
             name='content',
-            field=wagtail.core.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
+            field=wagtail.fields.StreamField([('heading', brueckio.pages.blocks.HeadingBlock()), ('rich_text', brueckio.pages.blocks.RichTextBlock()), ('contact_teaser', brueckio.pages.blocks.ContactTeaserBlock()), ('image', brueckio.pages.blocks.ImageChooserBlock())], blank=True, null=True),
         ),
     ]
