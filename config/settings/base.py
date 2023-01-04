@@ -72,6 +72,7 @@ THIRD_PARTY_APPS = [
     'wagtail.admin',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.routable_page',
+    'wagtail.contrib.settings',
     'wagtail',
 
     'modelcluster',
@@ -197,6 +198,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'wagtail.contrib.settings.context_processors.settings',
             ],
         },
     },

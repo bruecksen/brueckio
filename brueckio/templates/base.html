@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% if settings.core.SiteSpecificJSSettings.google_analytics %}{{ settings.core.SiteSpecificJSSettings.google_analytics|safe }}{% endif %}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title %}{%  firstof page.seo_title page.title "brueck.io" %}{% endblock title %}</title>
@@ -36,6 +37,9 @@
     <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/brands.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/solid.min.css' %}">
+
+    <script defer type="text/javascript" src="{% static '/js/klaro-config.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'js/klaro.js' %}"></script>
     
 
     <!-- Your stuff: Third-party CSS libraries go here -->
