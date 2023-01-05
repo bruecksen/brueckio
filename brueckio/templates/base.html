@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% if settings.core.SiteSpecificJSSettings.google_analytics %}{{ settings.core.SiteSpecificJSSettings.google_analytics|safe }}{% endif %}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title %}{%  firstof page.seo_title page.title "brueck.io" %}{% endblock title %}</title>
@@ -50,7 +49,7 @@
     
     
     {% endblock %}
-
+    {% if settings.core.SiteSpecificJSSettings.google_analytics %}{{ settings.core.SiteSpecificJSSettings.google_analytics|safe }}{% endif %}
   </head>
 
   <body>
