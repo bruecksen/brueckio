@@ -196,6 +196,10 @@
           animation-iteration-count: 1;
 }
 
+:root {
+  --font-family: "Noto Sans", sans-serif;
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;

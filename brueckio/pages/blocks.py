@@ -152,6 +152,7 @@ class ColumnOneThirdBlock(StructBlock):
 BASE_BLOCKS = [
     ('heading', HeadingBlock()),
     ('rich_text', RichTextBlock()),
+    ('html', _RawHTMLBlock()),
     ('lead_text', LeadTextBlock()),
     ('contact_teaser', ContactTeaserBlock()),
     ('image', ImageBlock()),
