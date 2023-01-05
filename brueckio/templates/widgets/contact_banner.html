@@ -1,3 +1,4 @@
+{% load wagtailcore_tags %}
 <div class="contact-banner">
     <div class="container py-5">
         {% if heading %}
@@ -9,8 +10,12 @@
         {% endif %}
         <div class="row">
             <div class="col-12 col-md-4 offset-md-1">
+                {% if contact_banner_text %}
+                {{ contact_banner_text|richtext }}
+                {% else %}
                 <p><b>Are you looking for support with your web project?</b><br>
                 Contact me, I'd love to make it happen with you!</p>
+                {% endif %}
                 <p>Say <a href="mailto:hi@brueck.io">hi@brueck.io</a> or <br>call <a href="tel:+4917699093233">+49 176 9909 3233</a></p>
             </div>
             <div class="col-12 col-md-4 offset-md-1">

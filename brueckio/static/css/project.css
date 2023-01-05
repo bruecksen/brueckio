@@ -681,12 +681,30 @@ footer hr {
   font-weight: 400;
   line-height: 1.7;
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 0.2rem;
   text-transform: none;
 }
 
-.content-page {
+.page-padding-bottom {
   padding-bottom: 7rem;
+}
+
+.hero {
+  background-color: #e1f0eb;
+}
+.hero h1 {
+  font-size: 3rem;
+  text-transform: none;
+}
+.hero h1 b {
+  color: #00b597;
+}
+.hero p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.hero p b {
+  color: #00b597;
 }
 
 .block-lead_text,

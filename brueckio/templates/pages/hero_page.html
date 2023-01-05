@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block content %}
+<div class="px-4 py-5 mb-5 hero">
+    <div class="col-lg-6 mx-auto">
+      {{ page.hero_title|richtext }}
+      {{ page.hero_text|richtext }}
+    </div>
+</div>
+<div class="container page-padding-bottom">
+    <div class="row">
+        <div class="col">
+            <h1 class="mt-0"><span class="underline">{{ page.title }}</span></h1>
+        </div>
+    </div>
+    {{ page.content }}
+</div>
+{% endblock %}
