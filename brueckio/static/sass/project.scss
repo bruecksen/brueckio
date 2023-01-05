@@ -23,6 +23,7 @@ $black: #000;
 $white: #fff;
 $light-gray: #f7f7f7;
 
+
 .hover-underline-animation {
 	display: inline-block;
 	position: relative;
@@ -516,6 +517,10 @@ footer {
   line-height: 2rem;
   font-weight: 200;
   margin-bottom: 0;
+  .container {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
   b {
     font-weight: 800;
   }

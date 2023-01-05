@@ -644,6 +644,10 @@ footer hr {
   font-weight: 200;
   margin-bottom: 0;
 }
+.contact-banner .container {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
 .contact-banner b {
   font-weight: 800;
 }
