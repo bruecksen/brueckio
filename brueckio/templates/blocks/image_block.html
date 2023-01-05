@@ -8,7 +8,9 @@
         {% if value.is_full_width %}
         {% image value.image width-1500 class="figure-img img-fluid d-block vw-100" title=value.image.title %}
         {% if value.content %}
-        {{ value.content }}
+        <div class="d-none d-md-block">
+            {{ value.content }}
+        </div>
         {% endif %}
         {% else %}
         {% image value.image width-1500 class="figure-img img-fluid d-block mx-auto" title=value.image.title %}
@@ -17,4 +19,9 @@
         <figcaption class="figure-caption">{{ value.description }}</figcaption>
         {% endif %}
     </figure>
+    {% if value.content %}
+        <div class="d-block d-md-none">
+            {{ value.content }}
+        </div>
+    {% endif %}
 {% endif %}

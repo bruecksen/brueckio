@@ -750,18 +750,18 @@ footer hr {
   text-align: center;
   font-size: 15px;
 }
-@media (max-width: 575.98px) {
-  .block-image img.rounded-circle {
-    border-radius: initial !important;
-  }
-}
-.block-image .testimonial {
+.block-image figure .testimonial {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-120%);
           transform: translateY(-50%) translateX(-120%);
   width: 30%;
+}
+@media (max-width: 575.98px) {
+  .block-image img.rounded-circle {
+    border-radius: initial !important;
+  }
 }
 .block-image .testimonial p {
   text-align: center;
@@ -774,6 +774,11 @@ footer hr {
 }
 .block-image .testimonial a {
   color: #373a3c;
+}
+@media (max-width: 575.98px) {
+  .block-image .testimonial {
+    width: 90%;
+  }
 }
 
 /* [1] The container */

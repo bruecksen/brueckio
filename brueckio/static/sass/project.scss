@@ -623,6 +623,13 @@ footer {
       text-align: center;
       font-size: 15px;
     }
+    .testimonial {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-120%);
+      width: 30%;
+    }
   }
   img.rounded-circle {
     @include media-breakpoint-only(xs) { 
@@ -630,11 +637,6 @@ footer {
     }
   }
   .testimonial {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-120%);
-    width: 30%;
     p {
       text-align: center;
     }
@@ -647,6 +649,11 @@ footer {
     }
     a {
       color: $dark-gray;
+    }
+  }
+  @include media-breakpoint-down(sm) { 
+    .testimonial {
+      width: 90%;
     }
   }
 }
