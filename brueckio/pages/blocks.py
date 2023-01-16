@@ -149,6 +149,20 @@ class ColumnOneThirdBlock(StructBlock):
         template = 'blocks/columns-3-1_block.html'
 
 
+class CollapseBlock(StructBlock):
+    title = TextBlock()
+    text = RichTextBlock()
+
+    class Meta:
+        label = 'Collapse'
+        icon = 'fa-list'
+
+    def get_context(self, value, parent_context=None):
+        context = super().get_context(value, parent_context=parent_context)
+        context['id'] = uuid.uuid4()
+        return context
+
+
 BASE_BLOCKS = [
     ('heading', HeadingBlock()),
     ('rich_text', RichTextBlock()),
@@ -156,6 +170,7 @@ BASE_BLOCKS = [
     ('lead_text', LeadTextBlock()),
     ('contact_teaser', ContactTeaserBlock()),
     ('image', ImageBlock()),
+    ('collapse', ListBlock(CollapseBlock(), template='blocks/collapse_block.html')),
     ('cv', CvBlock()),
     ('key_facts', KeyFactsBlock()),
     ('column_one_third', ColumnOneThirdBlock()),

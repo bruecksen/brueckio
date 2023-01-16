@@ -251,6 +251,10 @@
   border: 6px solid #00b597;
 }
 
+.color-green {
+  color: #00b597;
+}
+
 body,
 html {
   height: 100%;
@@ -327,6 +331,25 @@ p {
 }
 p b {
   font-weight: 800;
+}
+
+.accordion-header {
+  font-family: "Martel", sans-serif;
+  font-weight: bold;
+}
+.accordion-header .fa {
+  margin-top: -5px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #373a3c;
+  background-color: transparent;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.13);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.13);
+}
+
+.accordion-body {
+  font-size: 1.2rem;
 }
 
 img.icon {

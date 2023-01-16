@@ -1,0 +1,23 @@
+{% load wagtailcore_tags %}
+<div class="row">
+    <div class="col-12 col-lg-9 offset-lg-1">
+        <div class="accordion accordion-flush">
+            {{value.id }}
+            {% for item in value %}
+            <div class="accordion-item">
+                <h2 class="accordion-header mt-0">
+                  <button class="accordion-button collapsed fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target=".{{ item.title|slugify }}" aria-expanded="false">
+                    <i class="fa fa-check-square fa-lg color-green me-2"></i>
+                    {{ item.title }}
+                  </button>
+                </h2>
+                <div class="accordion-collapse collapse {{ item.title|slugify }}">
+                  <div class="accordion-body">
+                    {{ item.text|richtext }}
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
