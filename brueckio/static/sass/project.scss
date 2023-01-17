@@ -162,6 +162,10 @@ p {
   }
 }
 
+.block-rich_text + .block-button_list {
+  margin-top: -3rem;
+}
+
 .accordion-button:not(.collapsed) {
   color: $dark-gray;
   background-color: transparent;

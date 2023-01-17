@@ -341,6 +341,10 @@ p b {
   margin-top: -5px;
 }
 
+.block-rich_text + .block-button_list {
+  margin-top: -3rem;
+}
+
 .accordion-button:not(.collapsed) {
   color: #373a3c;
   background-color: transparent;
