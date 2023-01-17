@@ -1,12 +1,13 @@
 
 import uuid
-from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
-                                 DateBlock, IntegerBlock, ListBlock,
-                                 PageChooserBlock)
+
+from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock, DateBlock,
+                            IntegerBlock, ListBlock, PageChooserBlock)
 from wagtail.blocks import RawHTMLBlock as _RawHTMLBlock
 from wagtail.blocks import RichTextBlock as _RichTextBlock
-from wagtail.blocks import (StreamBlock, StructBlock, StructValue,
-                                 TextBlock, TimeBlock, URLBlock)
+from wagtail.blocks import (StreamBlock, StructBlock, StructValue, TextBlock,
+                            TimeBlock, URLBlock)
+from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 from wagtailfontawesome.blocks import IconBlock
@@ -132,15 +133,23 @@ class ProjectHeading(StructBlock):
 
 class LinkStructValue(StructValue):
     def url(self):
-        external_url = self.get('external_url')
-        page = self.get('page')
-        return external_url or page.url
+        external_url = self.get('external_url', None)
+        page = self.get('page', None)
+        document = self.get('document', None)
+        if external_url:
+            return external_url
+        elif page:
+            return page.url
+        elif document:
+            return document.url
+        return None
 
 
 class LinkBlock(StructBlock):
     text = CharBlock(label="link text", required=True)
     page = PageChooserBlock(label="page", required=False)
     external_url = URLBlock(label="external URL", required=False)
+    document = DocumentChooserBlock(label="document", required=False)
 
     class Meta:
         value_class = LinkStructValue
