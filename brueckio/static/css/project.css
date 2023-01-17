@@ -345,6 +345,14 @@ p b {
   margin-top: -3rem;
 }
 
+@media (max-width: 576px) {
+  .block-button_list .btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+}
+
 .accordion-button:not(.collapsed) {
   color: #373a3c;
   background-color: transparent;

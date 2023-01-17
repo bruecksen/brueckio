@@ -166,6 +166,16 @@ p {
   margin-top: -3rem;
 }
 
+.block-button_list {
+  @media (max-width: 576px) {
+    .btn {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
+}
+
 .accordion-button:not(.collapsed) {
   color: $dark-gray;
   background-color: transparent;
