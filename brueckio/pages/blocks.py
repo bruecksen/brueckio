@@ -130,12 +130,31 @@ class ProjectHeading(StructBlock):
         icon = 'fa-heading'
 
 
+class LinkStructValue(StructValue):
+    def url(self):
+        external_url = self.get('external_url')
+        page = self.get('page')
+        return external_url or page.url
+
+
+class LinkBlock(StructBlock):
+    text = CharBlock(label="link text", required=True)
+    page = PageChooserBlock(label="page", required=False)
+    external_url = URLBlock(label="external URL", required=False)
+
+    class Meta:
+        value_class = LinkStructValue
+        template = 'blocks/button_block.html'
+
+
 COLUMN_BLOCKS = [
     ('heading', HeadingBlock()),
     ('rich_text', RichTextBlock()),
     ('lead_text', LeadTextBlock()),
     ('image', ImageBlock()),
     ('key_facts', KeyFactsBlock()),
+    ('button', LinkBlock()),
+    ('button_list', ListBlock(LinkBlock(), template='blocks/button_list_block.html')),
 ]
 
 
@@ -163,6 +182,7 @@ class CollapseBlock(StructBlock):
         return context
 
 
+
 BASE_BLOCKS = [
     ('heading', HeadingBlock()),
     ('rich_text', RichTextBlock()),
@@ -176,4 +196,6 @@ BASE_BLOCKS = [
     ('column_one_third', ColumnOneThirdBlock()),
     ('project_heading', ProjectHeading()),
     ('testimonial', TestimonialBlock(target_model='pages.Testimonial', template='blocks/testimonial_block.html')),
+    ('button', LinkBlock()),
+    ('button_list', ListBlock(LinkBlock(), template='blocks/button_list_block.html')),
 ]

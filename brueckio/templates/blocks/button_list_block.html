@@ -1,0 +1,8 @@
+{% load wagtailcore_tags %}
+<div class="row">
+    <div class="col-12 col-lg-9 offset-lg-1">
+        {% for item in value %}
+        {% include_block item %}
+        {% endfor %}
+    </div>
+</div>
