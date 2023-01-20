@@ -3,7 +3,7 @@ from fabric.api import *
 def production():
     projectname = 'brueck.io'
     basepath = '/srv/brueck.io/%s'
-    env.hosts = ['brueck.io@beta.brueck.io']
+    env.hosts = ['brueck.io@brueck.io']
     env.path = basepath % projectname
     env.virtualenv_path = basepath % (projectname + 'env')
     env.push_branch = 'master'
