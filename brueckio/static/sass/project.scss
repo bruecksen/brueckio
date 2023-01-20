@@ -407,6 +407,9 @@ header {
         }
       }
       &.platforms {
+        .fab {
+          font-size: 1.5em;
+        }
         .nav-item {
           margin-left: 0;
         }

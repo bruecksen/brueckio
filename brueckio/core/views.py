@@ -16,6 +16,8 @@ class ContactFormView(APIView):
     """
 
     def post(self, request, format=None):
+        if request.data['a_password']:
+            return Response('Honeypot field is filled out', status=status.HTTP_400_BAD_REQUEST)
         serializer = ContactFormSerializer(data=request.data)
         if serializer.is_valid():
             # send email
