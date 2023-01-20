@@ -807,9 +807,14 @@ footer hr {
 }
 .block-image .testimonial .blockquote {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: bold;
   font-style: normal;
+}
+@media (min-width: 1200px) {
+  .block-image .testimonial .blockquote {
+    font-size: 1.2rem;
+  }
 }
 .block-image .testimonial a {
   color: #373a3c;

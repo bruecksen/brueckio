@@ -682,9 +682,12 @@ footer {
     }
     .blockquote {
       text-align: center;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: bold;
       font-style: normal;
+      @include media-breakpoint-up(xl) { 
+        font-size: 1.2rem;
+      }
 
     }
     a {
