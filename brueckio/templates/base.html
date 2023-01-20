@@ -13,7 +13,12 @@
     <meta property="og:locale" content="EN"/>
     <meta property="og:site_name" content="brueck.io"/>
     <meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}"/>
-    <meta property="og:url" content="https://{{ request.get_host }}"/>
+    <meta property="og:url" content="https://{{ request.get_host }}" />
+    <meta name=”twitter:card” content="{{ page.description }}" /> 
+    <meta name=”twitter:site” content="brueck.io" /> 
+    <meta name=”twitter:title” content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" /> 
+    <meta name=”twitter:description” content="{{ page.description }}" /> 
+    <meta name=”twitter:image” content="https://{{ request.get_host }}{% static 'images/banner.png' %}" />
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/favicon/apple-touch-icon.png" %}">
