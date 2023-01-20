@@ -827,7 +827,7 @@ footer hr {
 }
 @media (max-width: 575.98px) {
   .block-image .testimonial {
-    width: 90%;
+    width: 80%;
   }
 }
 
@@ -1036,7 +1036,13 @@ footer hr {
 }
 @media (max-width: 576px) {
   .testimonials .carousel .carousel-inner .carousel-item .testimonial {
-    width: 90%;
+    width: 80%;
+  }
+  .testimonials .carousel-control-prev {
+    left: -1rem;
+  }
+  .testimonials .carousel-control-next {
+    right: -1rem;
   }
 }
 

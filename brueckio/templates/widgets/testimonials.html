@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 {% if testimonials %}
 <div class="testimonials{% if no_border %} no-border{% endif %}">
-    <div id="testimonials-{{ uuid }}" class="carousel slide" data-interval="false">
+    <div id="testimonials-{{ uuid }}" class="carousel slide" data-bs-interval="false">
         <div class="carousel-inner">
             {% for testimonial in testimonials %}
             <div class="carousel-item {% if forloop.first %} active{% endif %}">

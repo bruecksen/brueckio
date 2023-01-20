@@ -702,7 +702,7 @@ footer {
   }
   @include media-breakpoint-down(sm) { 
     .testimonial {
-      width: 90%;
+      width: 80%;
     }
   }
 }
@@ -884,7 +884,13 @@ footer {
   }
   @media (max-width: 576px) {
     .carousel .carousel-inner .carousel-item .testimonial {
-      width: 90%;
+      width: 80%;
+    }
+    .carousel-control-prev {
+      left: -1rem;
+    }
+    .carousel-control-next {
+      right: -1rem;
     }
   }
 }
