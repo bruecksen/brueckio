@@ -795,7 +795,7 @@ footer hr {
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-120%);
           transform: translateY(-50%) translateX(-120%);
-  width: 30%;
+  width: 35%;
 }
 @media (max-width: 575.98px) {
   .block-image img.rounded-circle {
