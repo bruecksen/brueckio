@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import RichTextField, StreamField
@@ -20,6 +22,7 @@ class HomePage(Page):
     def get_context(self, value, parent_context=None):
         context = super(HomePage, self).get_context(value, parent_context=parent_context)
         context['projects'] = ProjectPage.objects.live().filter(is_highlight=True).order_by('?')[:3]
+        context['uuid'] = uuid.uuid4()
         return context
  
 
