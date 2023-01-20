@@ -574,6 +574,9 @@ footer {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   position: relative;
+  .more {
+    bottom: 0;
+  }
   @include media-breakpoint-up(sm) { 
     margin-top: 8rem;
     margin-bottom: 7rem;

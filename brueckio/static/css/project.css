@@ -700,6 +700,9 @@ footer hr {
   padding-bottom: 2rem;
   position: relative;
 }
+.introduction .more {
+  bottom: 0;
+}
 @media (min-width: 576px) {
   .introduction {
     margin-top: 8rem;
