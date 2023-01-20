@@ -488,7 +488,7 @@ header.open .navbar .platforms {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 0.5rem;
+  margin-top: 2.5rem;
 }
 header.open .navbar .platforms .nav-item {
   padding-left: 0.5rem;
