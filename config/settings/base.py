@@ -73,6 +73,7 @@ THIRD_PARTY_APPS = [
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.routable_page',
     'wagtail.contrib.settings',
+    "django.contrib.sitemaps",
     'wagtail',
 
     'modelcluster',

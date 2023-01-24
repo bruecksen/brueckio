@@ -1,8 +1,11 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
+from django.urls import path
 from django.contrib import admin
 from django.views import defaults as default_views
+
+from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail import urls as wagtail_urls
@@ -35,5 +38,6 @@ if settings.DEBUG:
             url(r'^__debug__/', include(debug_toolbar.urls)),
         ] + urlpatterns
 urlpatterns += [
+    path('sitemap.xml', sitemap),
     url(r'', include(wagtail_urls)),
 ]
