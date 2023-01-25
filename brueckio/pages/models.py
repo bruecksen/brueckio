@@ -67,7 +67,7 @@ class ProjectOverviewPage(Page):
 
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
-        context['projects'] = ProjectPage.objects.live().order_by('-first_published_at')
+        context['projects'] = ProjectPage.objects.live()
         return context
 
 
