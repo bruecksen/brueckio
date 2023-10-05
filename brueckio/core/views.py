@@ -34,7 +34,8 @@ class ContactFormView(APIView):
                     '[brueck.io] New contact form submission',
                     message,
                     'noreply@brueck.io',
-                    ['hi@brueck.io', ],
+                    ['hi@brueck.io'],
+                    fail_silently=False,
                 )
                 return Response(serializer.data, status=status.HTTP_200_OK)
             except:
