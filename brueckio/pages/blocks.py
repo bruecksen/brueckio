@@ -10,7 +10,7 @@ from wagtail.blocks import (StreamBlock, StructBlock, StructValue, TextBlock,
 from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
-from wagtailfontawesome.blocks import IconBlock
+from brueckio.core.blocks import IconBlock
 
 
 class HeaderChoiceBlock(ChoiceBlock):
