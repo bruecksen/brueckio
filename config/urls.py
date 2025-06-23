@@ -12,8 +12,12 @@ from wagtail import urls as wagtail_urls
 
 from brueckio.core.views import ContactFormView
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
+    path('sentry-debug/', trigger_error),
     re_path(settings.ADMIN_URL, admin.site.urls),
     path('api/contact-form/', ContactFormView.as_view()),
     path('cms/', include(wagtailadmin_urls)),
