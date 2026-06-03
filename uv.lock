@@ -99,7 +99,7 @@ dependencies = [
     { name = "gunicorn" },
     { name = "pip" },
     { name = "psycopg", extra = ["binary"] },
-    { name = "raven" },
+    { name = "sentry-sdk" },
     { name = "wagtail" },
 ]
 
@@ -112,7 +112,7 @@ requires-dist = [
     { name = "gunicorn", specifier = "==19.7.*" },
     { name = "pip", specifier = ">=26.1.2" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.3.4" },
-    { name = "raven", specifier = "==6.6.*" },
+    { name = "sentry-sdk", specifier = ">=2.61.1" },
     { name = "wagtail", specifier = "==5.2.*" },
 ]
 
@@ -710,15 +710,6 @@ wheels = [
 ]
 
 [[package]]
-name = "raven"
-version = "6.6.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/03/8a/f28e01894cbd34c9c33dce88fc9e1a39c8930f9d1ed8e35a8d5499083af8/raven-6.6.0.tar.gz", hash = "sha256:92bf4c4819472ed20f1b9905eeeafe1bc6fe5f273d7c14506fdb8fb3a6ab2074", size = 390421 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/09/db/394b12baaf9f14d8efa03e812bfe806ed60f29fe0602a8431bceb54b0ee4/raven-6.6.0-py2.py3-none-any.whl", hash = "sha256:738a52019d01955d5b44b49d67c9f2f4cedb1b4f70d4fb0b493931174d00e044", size = 282126 },
-]
-
-[[package]]
 name = "requests"
 version = "2.34.2"
 source = { registry = "https://pypi.org/simple" }
@@ -731,6 +722,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz", hash = "sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed", size = 142856 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl", hash = "sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0", size = 73075 },
+]
+
+[[package]]
+name = "sentry-sdk"
+version = "2.61.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "certifi" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/63/3b/4bc6b348bbd331daa14d4babe9f2b99bc854f4da41560eefb9488d78481d/sentry_sdk-2.61.1.tar.gz", hash = "sha256:9c6adccb3feefa9ba032c8d295ca477575c2f11896046a2b0ad686c47c4af555", size = 459429 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/df/54/c9218db183846e08efaf68534889ef42e499dde432778881104a42f7071b/sentry_sdk-2.61.1-py3-none-any.whl", hash = "sha256:fa36eaf4b8ad708f718500d4bdcc1532637526a22beb874d88cbc0a46458b5ae", size = 483735 },
 ]
 
 [[package]]
