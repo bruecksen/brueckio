@@ -1,0 +1,7 @@
+[local]
+#skip_migrate_on_resetdb = false
+
+[production]
+host = "brueck.io"
+user = "brueckio"
+dbname = "brueckio"
